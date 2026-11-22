@@ -2070,11 +2070,11 @@
       const toggleBtn = document.getElementById('music-toggle');
       const iconOn = document.getElementById('icon-music-on');
       const iconOff = document.getElementById('icon-music-off');
-      const openBtn = document.querySelector('a[href="#bienvenida"]');
 
       const TARGET_VOLUME = 0.45;
       const FADE_DURATION = 2500;
       let fadeInterval = null;
+      let userPaused = false;
 
       function updateIcons(isPlaying) {
         if (isPlaying) {
@@ -2086,6 +2086,12 @@
         }
       }
 
+      function removeUnlockListeners() {
+        document.removeEventListener('pointerdown', unlockOnFirstInteraction);
+        document.removeEventListener('touchstart', unlockOnFirstInteraction);
+        document.removeEventListener('keydown', unlockOnFirstInteraction);
+      }
+
       function playWithFadeIn() {
         if (!audio.paused) return;
 
@@ -2093,6 +2099,7 @@
         audio.volume = 0;
 
         audio.play().then(() => {
+          removeUnlockListeners();
           updateIcons(true);
           const stepTime = 50;
           const volumeStep = TARGET_VOLUME / (FADE_DURATION / stepTime);
@@ -2116,18 +2123,33 @@
         updateIcons(false);
       }
 
-      if (openBtn) {
-        openBtn.addEventListener('click', playWithFadeIn);
+      function unlockOnFirstInteraction() {
+        if (!userPaused && audio.paused) {
+          playWithFadeIn();
+        }
       }
 
-      toggleBtn.addEventListener('click', () => {
+      // 1. Intenta arrancar directamente al cargar la página
+      window.addEventListener('DOMContentLoaded', playWithFadeIn);
+
+      // 2. Si el celular bloquea el autoplay inicial, arranca al primer toque en cualquier parte
+      document.addEventListener('pointerdown', unlockOnFirstInteraction, { passive: true });
+      document.addEventListener('touchstart', unlockOnFirstInteraction, { passive: true });
+      document.addEventListener('keydown', unlockOnFirstInteraction);
+
+      // 3. Control manual desde el botón flotante
+      toggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
         if (audio.paused) {
+          userPaused = false;
           playWithFadeIn();
         } else {
+          userPaused = true;
           pauseAudio();
         }
       });
 
+      // 4. Pausa automática si el invitado cambia de pestaña, minimiza o bloquea el celular
       document.addEventListener('visibilitychange', () => {
         if (document.hidden && !audio.paused) {
           pauseAudio();
