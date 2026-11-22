@@ -1,0 +1,2046 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pasaporte de Boda — Estrella &amp; Emanuel | 03.09.2027</title>
+
+  <!-- Vista previa al compartir por WhatsApp y redes sociales -->
+  <meta property="og:title" content="Pasaporte de Boda — Estrella & Emanuel" />
+  <meta property="og:description" content="03 de Septiembre de 2027 · Te invitamos a ser testigo del comienzo de nuestra mayor aventura." />
+  <meta property="og:image" content="https://estrella-y-emanuel.vercel.app/portada.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://estrella-y-emanuel.vercel.app/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts: Cormorant Garamond (Serif), Montserrat (Sans-Serif), Space Mono (Técnica) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Configuración personalizada de paleta y tipografías en Tailwind -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            espresso: '#3B2820',
+            chocolate: '#5C4033',
+            taupe: '#8C7A6B',
+            sand: '#E8DFD1',
+            cream: '#F4EFE6',
+            ivory: '#FAF7F2',
+            gold: '#B8955A',
+            goldLight: '#C8A96E',
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Montserrat"', 'system-ui', 'sans-serif'],
+            mono: ['"Space Mono"', 'monospace'],
+          },
+          boxShadow: {
+            passport: '0 25px 60px -15px rgba(59, 40, 32, 0.35)',
+            boarding: '0 14px 36px -10px rgba(59, 40, 32, 0.14)',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* Textura sutil de papel/cuero para la tapa del pasaporte */
+    .passport-texture {
+      background-image:
+        radial-gradient(circle at 20% 20%, rgba(200, 169, 110, 0.09) 0%, transparent 45%),
+        radial-gradient(circle at 80% 80%, rgba(200, 169, 110, 0.08) 0%, transparent 45%),
+        repeating-linear-gradient(
+          45deg,
+          rgba(255, 255, 255, 0.015) 0px,
+          rgba(255, 255, 255, 0.015) 1px,
+          transparent 1px,
+          transparent 4px
+        );
+    }
+
+    /* Animaciones suaves de aparición al hacer scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Animación flotante sutil para el indicador de scroll */
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    .animate-float-slow {
+      animation: floatSlow 2.6s ease-in-out infinite;
+    }
+
+    /* =========================================================
+       ANIMACIONES DELICADAS: PORTADA FOIL, VUELOS, ACUARELA Y BRILLOS
+       ========================================================= */
+
+    /* Efecto lámina metálica cobre / bronce / dorado rosado cálido */
+    .foil-copper-text {
+      background-image: linear-gradient(
+        118deg,
+        #D9A77C 0%,
+        #E6BF98 16%,
+        #B86B43 36%,
+        #7A3219 50%,
+        #B86B43 66%,
+        #E2B48A 84%,
+        #9C4C29 100%
+      );
+      background-size: 220% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 1px 1px rgba(122, 50, 25, 0.14));
+      animation: foilShimmer 9s ease-in-out infinite;
+    }
+
+    @keyframes foilShimmer {
+      0%, 100% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+
+    /* Textura sutil de papel algodón / pergamino para la portada */
+    .vintage-paper-bg {
+      background-color: #F7F1E7;
+      background-image:
+        radial-gradient(circle at 50% 48%, rgba(250, 246, 239, 0.52) 0%, rgba(244, 236, 224, 0.25) 56%, rgba(217, 198, 174, 0.42) 100%),
+        repeating-linear-gradient(
+          0deg,
+          rgba(140, 110, 82, 0.018) 0px,
+          rgba(140, 110, 82, 0.018) 1px,
+          transparent 1px,
+          transparent 3px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          rgba(140, 110, 82, 0.015) 0px,
+          rgba(140, 110, 82, 0.015) 1px,
+          transparent 1px,
+          transparent 4px
+        );
+    }
+
+    /* Entrada suave de la rosa de los vientos y ligero vaivén de la aguja */
+    @keyframes compassEntrance {
+      0% {
+        opacity: 0;
+        transform: scale(0.9) rotate(-8deg);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+      }
+    }
+
+    @keyframes compassNeedleSway {
+      0%, 100% {
+        transform: rotate(0deg);
+      }
+      30% {
+        transform: rotate(4.2deg);
+      }
+      65% {
+        transform: rotate(-3.6deg);
+      }
+    }
+
+    @keyframes compassSheen {
+      0%, 100% {
+        transform: translateX(-140%) skewX(-24deg);
+        opacity: 0;
+      }
+      20% {
+        opacity: 0.48;
+      }
+      45% {
+        transform: translateX(150%) skewX(-24deg);
+        opacity: 0;
+      }
+    }
+
+    .compass-entrance {
+      animation: compassEntrance 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+      will-change: transform, opacity;
+    }
+
+    .compass-needle-sway {
+      transform-origin: 150px 150px;
+      animation: compassNeedleSway 10s ease-in-out 1.5s infinite;
+      will-change: transform;
+    }
+
+    .compass-sheen {
+      animation: compassSheen 7.5s ease-in-out 1.2s infinite;
+    }
+
+    /* Diminuto avión dorado/bronce cruzando suavemente el mapa de fondo */
+    @keyframes heroMapFlight {
+      0% {
+        transform: translate3d(-10vw, 48px, 0) rotate(-14deg);
+        opacity: 0;
+      }
+      12% {
+        opacity: 0.55;
+      }
+      50% {
+        transform: translate3d(48vw, -18px, 0) rotate(-5deg);
+        opacity: 0.65;
+      }
+      88% {
+        opacity: 0.55;
+      }
+      100% {
+        transform: translate3d(108vw, -58px, 0) rotate(-10deg);
+        opacity: 0;
+      }
+    }
+
+    .hero-map-plane {
+      animation: heroMapFlight 24s linear 1.2s infinite;
+      will-change: transform, opacity;
+    }
+
+    /* 2. Avioncitos cruzando suavemente entre secciones */
+    @keyframes flyAcrossRight {
+      0% {
+        transform: translate3d(-12vw, 10px, 0) rotate(-4deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.78;
+      }
+      50% {
+        transform: translate3d(48vw, -12px, 0) rotate(2deg);
+        opacity: 0.85;
+      }
+      90% {
+        opacity: 0.78;
+      }
+      100% {
+        transform: translate3d(112vw, 6px, 0) rotate(5deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes flyAcrossLeft {
+      0% {
+        transform: translate3d(112vw, 8px, 0) scaleX(-1) rotate(-3deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.72;
+      }
+      50% {
+        transform: translate3d(48vw, -10px, 0) scaleX(-1) rotate(2deg);
+        opacity: 0.82;
+      }
+      90% {
+        opacity: 0.72;
+      }
+      100% {
+        transform: translate3d(-12vw, 10px, 0) scaleX(-1) rotate(4deg);
+        opacity: 0;
+      }
+    }
+
+    .bg-plane-right {
+      animation: flyAcrossRight 22s linear infinite;
+      will-change: transform, opacity;
+    }
+
+    .bg-plane-left {
+      animation: flyAcrossLeft 26s linear 4s infinite;
+      will-change: transform, opacity;
+    }
+
+    /* Respiración y giro casi imperceptible de sellos/brújulas de fondo */
+    @keyframes stampBreathe {
+      0%, 100% {
+        transform: rotate(12deg) scale(1);
+      }
+      50% {
+        transform: rotate(15deg) scale(1.03);
+      }
+    }
+
+    .stamp-breathe {
+      animation: stampBreathe 11s ease-in-out infinite;
+    }
+
+    /* 3. Flotación orgánica ultra suave para acuarelas */
+    @keyframes watercolorDrift {
+      0%, 100% {
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+      50% {
+        transform: translate3d(6px, -8px, 0) scale(1.025);
+      }
+    }
+
+    .watercolor-float {
+      animation: watercolorDrift 16s ease-in-out infinite;
+      will-change: transform;
+    }
+
+    .watercolor-float-alt {
+      animation: watercolorDrift 20s ease-in-out 3s infinite reverse;
+      will-change: transform;
+    }
+
+    /* 4. Destellos estilo brillos y partículas doradas en Check-in */
+    @keyframes sparkleTwinkle {
+      0%, 100% {
+        opacity: 0.12;
+        transform: scale(0.65) rotate(0deg);
+      }
+      50% {
+        opacity: 0.92;
+        transform: scale(1.18) rotate(22deg);
+      }
+    }
+
+    @keyframes glintFloat {
+      0%, 100% {
+        opacity: 0.18;
+        transform: translate3d(0, 0, 0) scale(0.8);
+      }
+      50% {
+        opacity: 0.75;
+        transform: translate3d(0, -10px, 0) scale(1.15);
+      }
+    }
+
+    .sparkle-star {
+      animation: sparkleTwinkle var(--dur, 4.2s) ease-in-out var(--delay, 0s) infinite;
+      will-change: transform, opacity;
+    }
+
+    .sparkle-dot {
+      animation: glintFloat var(--dur, 5.5s) ease-in-out var(--delay, 0s) infinite;
+      will-change: transform, opacity;
+    }
+
+    /* 5. Animaciones doradas de lunas crecientes y estrellas en el pie de página */
+    @keyframes moonDrift {
+      0%, 100% {
+        opacity: 0.35;
+        transform: translate3d(0, 0, 0) rotate(-8deg) scale(1);
+      }
+      50% {
+        opacity: 0.85;
+        transform: translate3d(4px, -10px, 0) rotate(6deg) scale(1.06);
+      }
+    }
+
+    @keyframes starGlow {
+      0%, 100% {
+        opacity: 0.2;
+        transform: scale(0.75) rotate(0deg);
+        filter: drop-shadow(0 0 2px rgba(200, 169, 110, 0.25));
+      }
+      50% {
+        opacity: 0.95;
+        transform: scale(1.18) rotate(14deg);
+        filter: drop-shadow(0 0 8px rgba(200, 169, 110, 0.75));
+      }
+    }
+
+    .footer-moon {
+      animation: moonDrift var(--dur, 7.5s) ease-in-out var(--delay, 0s) infinite;
+      will-change: transform, opacity;
+    }
+
+    .footer-star {
+      animation: starGlow var(--dur, 4.4s) ease-in-out var(--delay, 0s) infinite;
+      will-change: transform, opacity, filter;
+    }
+
+    /* Respetar preferencia de movimiento reducido */
+    @media (prefers-reduced-motion: reduce) {
+      .foil-copper-text,
+      .compass-entrance,
+      .compass-needle-sway,
+      .compass-sheen,
+      .hero-map-plane,
+      .bg-plane-right,
+      .bg-plane-left,
+      .stamp-breathe,
+      .watercolor-float,
+      .watercolor-float-alt,
+      .sparkle-star,
+      .sparkle-dot,
+      .footer-moon,
+      .footer-star,
+      .animate-float-slow {
+        animation: none !important;
+        opacity: 1 !important;
+      }
+    }
+
+    /* Evitar desbordamiento horizontal */
+    html, body {
+      overflow-x: hidden;
+    }
+  </style>
+</head>
+<body class="bg-ivory text-espresso font-sans antialiased selection:bg-gold/25 selection:text-espresso">
+
+  <!-- Filtros y gradientes SVG reutilizables para texturas de acuarela -->
+  <svg width="0" height="0" class="absolute pointer-events-none" aria-hidden="true">
+    <defs>
+      <filter id="wc-texture-soft" x="-25%" y="-25%" width="150%" height="150%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.014" numOctaves="4" seed="7" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="28" xChannelSelector="R" yChannelSelector="G" result="displaced" />
+        <feGaussianBlur in="displaced" stdDeviation="6" />
+      </filter>
+      <filter id="wc-texture-delicate" x="-25%" y="-25%" width="150%" height="150%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="3" seed="19" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="22" xChannelSelector="R" yChannelSelector="G" result="displaced" />
+        <feGaussianBlur in="displaced" stdDeviation="5" />
+      </filter>
+      <radialGradient id="wc-grad-sand" cx="45%" cy="45%" r="55%">
+        <stop offset="0%" stop-color="#D9C5AD" stop-opacity="0.58" />
+        <stop offset="55%" stop-color="#E8DFD1" stop-opacity="0.34" />
+        <stop offset="100%" stop-color="#E8DFD1" stop-opacity="0" />
+      </radialGradient>
+      <radialGradient id="wc-grad-peach" cx="50%" cy="50%" r="52%">
+        <stop offset="0%" stop-color="#DFC0AA" stop-opacity="0.46" />
+        <stop offset="60%" stop-color="#EBD6C5" stop-opacity="0.22" />
+        <stop offset="100%" stop-color="#EBD6C5" stop-opacity="0" />
+      </radialGradient>
+      <radialGradient id="wc-grad-champagne" cx="50%" cy="50%" r="52%">
+        <stop offset="0%" stop-color="#C8A96E" stop-opacity="0.34" />
+        <stop offset="60%" stop-color="#DEC699" stop-opacity="0.16" />
+        <stop offset="100%" stop-color="#DEC699" stop-opacity="0" />
+      </radialGradient>
+      <radialGradient id="wc-grad-taupe" cx="48%" cy="48%" r="54%">
+        <stop offset="0%" stop-color="#A99686" stop-opacity="0.32" />
+        <stop offset="62%" stop-color="#CFC2B4" stop-opacity="0.16" />
+        <stop offset="100%" stop-color="#CFC2B4" stop-opacity="0" />
+      </radialGradient>
+    </defs>
+  </svg>
+
+  <!-- ========================================================= -->
+  <!-- 1. PORTADA (TAPA DE PASAPORTE VINTAGE + FOIL COBRE)       -->
+  <!-- ========================================================= -->
+  <header
+    id="portada"
+    class="relative min-h-screen w-full vintage-paper-bg text-espresso flex items-center justify-center px-5 py-10 sm:py-14 overflow-hidden border-b border-gold/25"
+  >
+    <!-- Mapa cartográfico antiguo vectorial SVG de fondo -->
+    <div class="pointer-events-none select-none absolute inset-0 overflow-hidden" aria-hidden="true">
+      <svg
+        class="w-full h-full object-cover opacity-80"
+        viewBox="0 0 900 1350"
+        preserveAspectRatio="xMidYMid slice"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <!-- Gradiente sepia suave para continentes -->
+          <linearGradient id="land-tint-1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#E7DAC7" stop-opacity="0.72" />
+            <stop offset="100%" stop-color="#DECDB6" stop-opacity="0.52" />
+          </linearGradient>
+          <linearGradient id="land-tint-2" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#E4D4BE" stop-opacity="0.62" />
+            <stop offset="100%" stop-color="#D7C3A9" stop-opacity="0.45" />
+          </linearGradient>
+        </defs>
+
+        <!-- Cuadrícula cartográfica de latitud y longitud -->
+        <g stroke="#B9A38A" stroke-width="0.75" opacity="0.34">
+          <line x1="0" y1="150" x2="900" y2="150" />
+          <line x1="0" y1="330" x2="900" y2="330" />
+          <line x1="0" y1="510" x2="900" y2="510" />
+          <line x1="0" y1="690" x2="900" y2="690" />
+          <line x1="0" y1="870" x2="900" y2="870" />
+          <line x1="0" y1="1050" x2="900" y2="1050" />
+          <line x1="0" y1="1230" x2="900" y2="1230" />
+
+          <path d="M120 0 Q 95 675 135 1350" />
+          <path d="M285 0 Q 270 675 295 1350" />
+          <line x1="450" y1="0" x2="450" y2="1350" />
+          <path d="M615 0 Q 630 675 605 1350" />
+          <path d="M780 0 Q 805 675 765 1350" />
+        </g>
+
+        <!-- Líneas de rumbo náuticas (carta portulana) irradiando suavemente -->
+        <g stroke="#C2AB91" stroke-width="0.55" opacity="0.28">
+          <line x1="450" y1="640" x2="0" y2="120" />
+          <line x1="450" y1="640" x2="260" y2="0" />
+          <line x1="450" y1="640" x2="640" y2="0" />
+          <line x1="450" y1="640" x2="900" y2="140" />
+          <line x1="450" y1="640" x2="900" y2="540" />
+          <line x1="450" y1="640" x2="900" y2="960" />
+          <line x1="450" y1="640" x2="680" y2="1350" />
+          <line x1="450" y1="640" x2="220" y2="1350" />
+          <line x1="450" y1="640" x2="0" y2="980" />
+          <line x1="450" y1="640" x2="0" y2="540" />
+        </g>
+
+        <!-- Masas continentales estilizadas (Europa, Norte de África, Atlántico, Oriente) -->
+        <g stroke="#AD957C" stroke-width="1.15" stroke-linejoin="round" opacity="0.52">
+          <!-- Escandinavia y Norte de Europa -->
+          <path
+            d="M355 55 L390 42 L430 58 L462 40 L515 62 L548 112 L522 158 L492 145 L468 188 L430 198 L404 162 L365 182 L342 148 L368 102 Z"
+            fill="url(#land-tint-1)"
+          />
+          <!-- Islas Británicas -->
+          <path
+            d="M238 228 L268 205 L286 244 L274 282 L244 294 L228 265 Z"
+            fill="url(#land-tint-2)"
+          />
+          <path
+            d="M202 252 L222 246 L225 276 L204 282 Z"
+            fill="url(#land-tint-2)"
+          />
+          <!-- Europa Continental + Península Ibérica + Italia + Grecia -->
+          <path
+            d="M175 435 L202 382 L255 372 L272 325 L318 296 L372 272 L438 258 L512 225 L595 198 L685 162 L795 142 L895 168 L900 415 L815 442 L748 422 L695 456 L645 438 L612 465 L575 445 L558 492 L522 478 L510 428 L462 418 L478 486 L455 508 L428 465 L402 422 L352 412 L318 446 L268 448 L244 494 L196 502 L166 474 Z"
+            fill="url(#land-tint-1)"
+          />
+          <!-- Península Arábiga y Oriente Medio -->
+          <path
+            d="M668 518 L735 504 L818 538 L885 595 L862 695 L796 742 L728 712 L685 636 L652 574 Z"
+            fill="url(#land-tint-2)"
+          />
+          <!-- Norte y Centro de África -->
+          <path
+            d="M148 568 L225 538 L315 534 L392 552 L458 595 L535 588 L602 598 L645 662 L696 756 L755 812 L724 912 L658 1005 L615 1118 L552 1218 L475 1272 L408 1246 L376 1138 L348 1032 L322 938 L242 912 L164 855 L112 764 L106 664 Z"
+            fill="url(#land-tint-1)"
+          />
+          <!-- Madagascar -->
+          <path
+            d="M712 1038 L742 1018 L754 1094 L728 1142 L702 1116 Z"
+            fill="url(#land-tint-2)"
+          />
+          <!-- Borde de América / Groenlandia en el extremo izquierdo -->
+          <path
+            d="M0 78 L86 42 L134 94 L108 182 L44 218 L0 198 Z"
+            fill="url(#land-tint-2)"
+          />
+          <path
+            d="M0 892 L48 925 L92 1014 L64 1145 L18 1245 L0 1265 Z"
+            fill="url(#land-tint-2)"
+          />
+        </g>
+
+        <!-- Rutas marítimas punteadas antiguas -->
+        <g stroke="#B4987A" stroke-width="0.9" stroke-dasharray="3 5" opacity="0.42">
+          <path d="M90 360 Q 250 470 430 560 T 790 770" />
+          <path d="M160 880 Q 340 770 520 660 T 860 320" />
+          <path d="M210 510 Q 130 670 215 840" />
+        </g>
+
+        <!-- Topónimos vintage muy suaves -->
+        <g fill="#9F866D" font-family="'Cormorant Garamond', Georgia, serif" letter-spacing="5" opacity="0.34">
+          <text x="58" y="425" font-size="13" transform="rotate(-18 58 425)">OCÉANO ATLÁNTICO</text>
+          <text x="330" y="345" font-size="14">EUROPA</text>
+          <text x="315" y="542" font-size="11" letter-spacing="4">MAR MEDITERRÁNEO</text>
+          <text x="270" y="758" font-size="16" letter-spacing="8">ÁFRICA</text>
+          <text x="720" y="640" font-size="12">ARABIA</text>
+          <text x="595" y="882" font-size="11" transform="rotate(14 595 882)">OCÉANO ÍNDICO</text>
+        </g>
+      </svg>
+
+      <!-- Velo crema semitransparente para máxima legibilidad y suavidad -->
+      <div
+        class="absolute inset-0"
+        style="background: radial-gradient(circle at 50% 48%, rgba(250, 246, 240, 0.72) 0%, rgba(248, 242, 234, 0.56) 55%, rgba(243, 234, 222, 0.68) 100%);"
+      ></div>
+
+      <!-- Diminuto avión dorado/bronce cruzando suavemente en trayectoria curva -->
+      <div class="hero-map-plane absolute top-[26%] left-0 text-[#B86B43]/70">
+        <svg class="w-4 h-4 rotate-90" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Contenido vertical centrado estilo tapa de pasaporte de lujo -->
+    <div class="relative z-10 w-full max-w-md sm:max-w-lg mx-auto flex flex-col items-center justify-between text-center min-h-[82vh] sm:min-h-[84vh] py-4 sm:py-6">
+
+      <!-- Bloque superior: PASAPORTE / A NUESTRA BODA -->
+      <div class="w-full pt-2 sm:pt-4">
+        <p class="font-sans font-normal text-[2.45rem] sm:text-[3.45rem] leading-none tracking-[0.14em] uppercase foil-copper-text">
+          PASAPORTE
+        </p>
+        <p class="mt-2.5 sm:mt-3 font-sans font-semibold text-xs sm:text-[0.95rem] tracking-[0.26em] uppercase foil-copper-text">
+          A NUESTRA BODA
+        </p>
+      </div>
+
+      <!-- Emblema central protagonista: Rosa de los Vientos / Brújula Náutica SVG -->
+      <div class="my-6 sm:my-8 relative flex items-center justify-center compass-entrance">
+        <div class="relative w-64 h-64 sm:w-80 sm:h-80 flex items-center justify-center overflow-hidden rounded-full">
+          <!-- Brillo metálico sutil que recorre el foil -->
+          <div
+            class="compass-sheen pointer-events-none absolute inset-y-4 w-20 bg-gradient-to-r from-transparent via-white/45 to-transparent z-20"
+            aria-hidden="true"
+          ></div>
+
+          <svg
+            class="w-full h-full drop-shadow-[0_3px_10px_rgba(122,50,25,0.14)]"
+            viewBox="0 0 300 300"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-label="Rosa de los vientos metálica en cobre y bronce"
+          >
+            <defs>
+              <!-- Gradientes foil cobre / bronce / dorado cálido -->
+              <linearGradient id="foil-ring" x1="15%" y1="10%" x2="88%" y2="90%">
+                <stop offset="0%" stop-color="#D9A77C" />
+                <stop offset="28%" stop-color="#E6BF98" />
+                <stop offset="52%" stop-color="#B86B43" />
+                <stop offset="76%" stop-color="#7A3219" />
+                <stop offset="100%" stop-color="#D9A77C" />
+              </linearGradient>
+
+              <linearGradient id="foil-light" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#F0CFAF" />
+                <stop offset="48%" stop-color="#D9A77C" />
+                <stop offset="100%" stop-color="#B86B43" />
+              </linearGradient>
+
+              <linearGradient id="foil-dark" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#A85630" />
+                <stop offset="55%" stop-color="#7A3219" />
+                <stop offset="100%" stop-color="#B86B43" />
+              </linearGradient>
+
+              <linearGradient id="foil-accent" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#E2B48A" />
+                <stop offset="50%" stop-color="#B86B43" />
+                <stop offset="100%" stop-color="#7A3219" />
+              </linearGradient>
+            </defs>
+
+            <!-- Doble aro exterior metálico -->
+            <circle cx="150" cy="150" r="112" stroke="url(#foil-ring)" stroke-width="4.2" />
+            <circle cx="150" cy="150" r="102" stroke="url(#foil-accent)" stroke-width="1.35" opacity="0.92" />
+            <circle cx="150" cy="150" r="88" stroke="url(#foil-ring)" stroke-width="1.15" opacity="0.82" />
+            <circle cx="150" cy="150" r="76" stroke="url(#foil-accent)" stroke-width="0.9" stroke-dasharray="2.5 4.5" opacity="0.72" />
+
+            <!-- Pequeños puntos y marcas de grados alrededor del círculo interior -->
+            <g fill="url(#foil-dark)" opacity="0.9">
+              <!-- Puntos cada 15 grados (saltando los cardinales) -->
+              <circle cx="150" cy="68" r="1.7" transform="rotate(15 150 150)" />
+              <circle cx="150" cy="68" r="2.1" transform="rotate(30 150 150)" />
+              <circle cx="150" cy="68" r="1.7" transform="rotate(60 150 150)" />
+              <circle cx="150" cy="68" r="2.1" transform="rotate(75 150 150)" />
+              <circle cx="150" cy="68" r="1.7" transform="rotate(105 150 150)" />
+              <circle cx="150" cy="68" r="2.1" transform="rotate(120 150 150)" />
+              <circle cx="150" cy="68" r="1.7" transform="rotate(150 150 150)" />
+              <circle cx="150" cy="68" r="2.1" transform="rotate(165 150 150)" />
+              <circle cx="150" cy="68" r="1.7" transform="rotate(195 150 150)" />
+              <circle cx="150" cy="68" r="2.1" transform="rotate(210 150 150)" />
+              <circle cx="150" cy="68" r="1.7" transform="rotate(240 150 150)" />
+              <circle cx="150" cy="68" r="2.1" transform="rotate(255 150 150)" />
+              <circle cx="150" cy="68" r="1.7" transform="rotate(285 150 150)" />
+              <circle cx="150" cy="68" r="2.1" transform="rotate(300 150 150)" />
+              <circle cx="150" cy="68" r="1.7" transform="rotate(330 150 150)" />
+              <circle cx="150" cy="68" r="2.1" transform="rotate(345 150 150)" />
+            </g>
+
+            <!-- Rayos finos internos (16 puntas secundarias) -->
+            <g stroke="url(#foil-accent)" stroke-width="1.05" stroke-linecap="round" opacity="0.82">
+              <line x1="150" y1="150" x2="150" y2="78" transform="rotate(11.25 150 150)" />
+              <line x1="150" y1="150" x2="150" y2="72" transform="rotate(22.5 150 150)" />
+              <line x1="150" y1="150" x2="150" y2="78" transform="rotate(33.75 150 150)" />
+              <line x1="150" y1="150" x2="150" y2="78" transform="rotate(56.25 150 150)" />
+              <line x1="150" y1="150" x2="150" y2="72" transform="rotate(67.5 150 150)" />
+              <line x1="150" y1="150" x2="150" y2="78" transform="rotate(78.75 150 150)" />
+              <line x1="150" y1="150" x2="150" y2="78" transform="rotate(101.25 150 150)" />
+              <line x1="150" y1="150" x2="150" y2="72" transform="rotate(112.5 150 150)" />
+              <line x1="150" y1="150" x2="150" y2="78" transform="rotate(123.75 150 150)" />
+              <line x1="150" y1="150" x2="150" y2="78" transform="rotate(146.25 150 150)" />
+              <line x1="150" y1="150" x2="150" y2="72" transform="rotate(157.5 150 150)" />
+              <line x1="150" y1="150" x2="150" y2="78" transform="rotate(168.75 150 150)" />
+              <line x1="150" y1="150" x2="150" y2="78" transform="rotate(191.25 150 150)" />
+              <line x1="150" y1="150" x2="150" y2="72" transform="rotate(202.5 150 150)" />
+              <line x1="150" y1="150" x2="150" y2="78" transform="rotate(213.75 150 150)" />
+              <line x1="150" y1="150" x2="150" y2="78" transform="rotate(236.25 150 150)" />
+              <line x1="150" y1="150" x2="150" y2="72" transform="rotate(247.5 150 150)" />
+              <line x1="150" y1="150" x2="150" y2="78" transform="rotate(258.75 150 150)" />
+              <line x1="150" y1="150" x2="150" y2="78" transform="rotate(281.25 150 150)" />
+              <line x1="150" y1="150" x2="150" y2="72" transform="rotate(292.5 150 150)" />
+              <line x1="150" y1="150" x2="150" y2="78" transform="rotate(303.75 150 150)" />
+              <line x1="150" y1="150" x2="150" y2="78" transform="rotate(326.25 150 150)" />
+              <line x1="150" y1="150" x2="150" y2="72" transform="rotate(337.5 150 150)" />
+              <line x1="150" y1="150" x2="150" y2="78" transform="rotate(348.75 150 150)" />
+            </g>
+
+            <!-- Aguja interna con ligero vaivén delicado -->
+            <g class="compass-needle-sway">
+              <!-- 4 puntas intercardinales (NE, SE, SW, NW) con facetas claras y oscuras -->
+              <g>
+                <!-- NE -->
+                <polygon points="150,150 144,136 218,82" fill="url(#foil-light)" />
+                <polygon points="150,150 164,156 218,82" fill="url(#foil-dark)" />
+                <!-- SE -->
+                <polygon points="150,150 164,144 218,218" fill="url(#foil-light)" />
+                <polygon points="150,150 144,164 218,218" fill="url(#foil-dark)" />
+                <!-- SW -->
+                <polygon points="150,150 156,164 82,218" fill="url(#foil-light)" />
+                <polygon points="150,150 136,144 82,218" fill="url(#foil-dark)" />
+                <!-- NW -->
+                <polygon points="150,150 136,156 82,82" fill="url(#foil-light)" />
+                <polygon points="150,150 156,136 82,82" fill="url(#foil-dark)" />
+              </g>
+
+              <!-- 4 puntas cardinales largas que sobresalen ligeramente del aro exterior -->
+              <g>
+                <!-- Norte -->
+                <polygon points="150,18 136,136 150,150" fill="url(#foil-light)" />
+                <polygon points="150,18 164,136 150,150" fill="url(#foil-dark)" />
+                <!-- Este -->
+                <polygon points="282,150 164,136 150,150" fill="url(#foil-light)" />
+                <polygon points="282,150 164,164 150,150" fill="url(#foil-dark)" />
+                <!-- Sur -->
+                <polygon points="150,282 164,164 150,150" fill="url(#foil-light)" />
+                <polygon points="150,282 136,164 150,150" fill="url(#foil-dark)" />
+                <!-- Oeste -->
+                <polygon points="18,150 136,164 150,150" fill="url(#foil-light)" />
+                <polygon points="18,150 136,136 150,150" fill="url(#foil-dark)" />
+              </g>
+
+              <!-- Centro pulido de la rosa de los vientos -->
+              <circle cx="150" cy="150" r="8.5" fill="url(#foil-light)" stroke="url(#foil-dark)" stroke-width="1.4" />
+              <circle cx="150" cy="150" r="3" fill="#7A3219" />
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Bloque inferior: Nombres, Fecha y Botón refinado -->
+      <div class="w-full flex flex-col items-center pb-2 sm:pb-4">
+        <h1 class="font-serif font-semibold text-[2.45rem] sm:text-[3.35rem] leading-tight tracking-[0.02em] foil-copper-text">
+          Estrella &amp; Emanuel
+        </h1>
+
+        <p class="mt-2 font-sans font-semibold text-base sm:text-lg tracking-[0.22em] foil-copper-text">
+          03.09.2027
+        </p>
+
+        <!-- Botón minimalista con borde cobre/bronce -->
+        <a
+          href="#bienvenida"
+          class="group mt-7 inline-flex items-center gap-2.5 px-7 py-3 rounded-full bg-ivory/75 hover:bg-ivory backdrop-blur-sm border border-[#B86B43]/60 hover:border-[#7A3219] text-[#7A3219] font-sans font-medium text-xs sm:text-[13px] tracking-[0.2em] uppercase transition-all duration-300 shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-[#B86B43]/50 focus:ring-offset-2 focus:ring-offset-[#F7F1E7]"
+        >
+          <span>Abrir invitación</span>
+          <svg
+            class="w-4 h-4 text-[#B86B43] animate-float-slow transition-transform duration-300 group-hover:translate-y-0.5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 5v14M5 12l7 7 7-7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========================================================= -->
+    <!-- 2. FRASE DE BIENVENIDA                                    -->
+    <!-- ========================================================= -->
+    <section id="bienvenida" class="relative py-20 sm:py-28 px-5 bg-ivory overflow-hidden">
+      <!-- Sello de pasaporte decorativo de fondo -->
+      <div
+        class="stamp-breathe pointer-events-none select-none absolute -right-8 top-8 sm:right-12 sm:top-12 w-36 h-36 sm:w-44 sm:h-44 rounded-full border-2 border-dashed border-gold/25 flex flex-col items-center justify-center rotate-12 opacity-70"
+        aria-hidden="true"
+      >
+        <div class="w-28 h-28 sm:w-36 sm:h-36 rounded-full border border-gold/30 flex flex-col items-center justify-center text-center px-2">
+          <span class="font-mono text-[8px] sm:text-[9px] tracking-[0.22em] text-gold uppercase">San Luis · ARG</span>
+          <span class="font-serif italic text-base sm:text-lg text-gold my-0.5">E &amp; E</span>
+          <span class="font-mono text-[8px] sm:text-[9px] tracking-[0.18em] text-gold">03 · 09 · 2027</span>
+        </div>
+      </div>
+
+      <div class="max-w-2xl mx-auto text-center relative z-10 reveal">
+        <span class="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.28em] uppercase text-gold mb-5">
+          <span class="w-6 h-px bg-gold/60"></span>
+          Bienvenidos a bordo
+          <span class="w-6 h-px bg-gold/60"></span>
+        </span>
+
+        <blockquote class="font-serif text-2xl sm:text-3xl md:text-[2.1rem] leading-relaxed text-espresso font-normal italic">
+          “El mejor destino nunca es un lugar, sino una nueva forma de caminar juntos. Te invitamos a ser testigo del comienzo de nuestra mayor aventura.”
+        </blockquote>
+
+        <!-- Separador con ícono de brújula -->
+        <div class="mt-9 flex items-center justify-center gap-3 text-gold">
+          <span class="w-14 h-px bg-gold/40"></span>
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" />
+            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" fill="currentColor" fill-opacity="0.2" />
+          </svg>
+          <span class="w-14 h-px bg-gold/40"></span>
+        </div>
+      </div>
+
+      <!-- Avioncito sutil cruzando entre Bienvenida y Cuenta Regresiva -->
+      <div class="pointer-events-none select-none absolute bottom-3 inset-x-0 h-10 overflow-hidden" aria-hidden="true">
+        <svg class="w-full h-full opacity-35" viewBox="0 0 1200 40" preserveAspectRatio="none" fill="none">
+          <path d="M-20 28 Q 300 6, 600 22 T 1220 18" stroke="#B8955A" stroke-width="1" stroke-dasharray="4 6" />
+        </svg>
+        <div class="bg-plane-right absolute top-1.5 left-0 text-gold/75">
+          <svg class="w-5 h-5 rotate-90" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 3. CUENTA REGRESIVA ("PRÓXIMO DESPEGUE")                  -->
+    <!-- ========================================================= -->
+    <section id="cuenta-regresiva" class="py-16 sm:py-24 px-5 bg-cream border-y border-sand">
+      <div class="max-w-3xl mx-auto text-center reveal">
+        <!-- Etiqueta tipo tablero de vuelos -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sand/70 border border-gold/30 mb-4">
+          <svg class="w-3.5 h-3.5 text-chocolate" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+          </svg>
+          <span class="font-mono text-[10px] sm:text-xs tracking-[0.25em] uppercase text-chocolate">
+            Vuelo EE-2027 · En horario
+          </span>
+        </div>
+
+        <h2 class="font-serif text-4xl sm:text-5xl text-espresso font-medium">
+          Próximo despegue
+        </h2>
+        <p class="mt-2 font-mono text-xs sm:text-sm tracking-[0.22em] text-taupe uppercase">
+          03 · 09 · 2027 — 21:00 HS
+        </p>
+
+        <!-- Cajas del contador regresivo -->
+        <div class="mt-10 grid grid-cols-3 sm:grid-cols-4 gap-3 sm:gap-5 max-w-2xl mx-auto">
+          <!-- Días -->
+          <div class="bg-ivory rounded-2xl border border-gold/30 shadow-boarding px-3 py-5 sm:py-6 flex flex-col items-center relative overflow-hidden">
+            <span class="absolute top-0 inset-x-0 h-1 bg-espresso"></span>
+            <span id="cd-days" class="font-serif text-4xl sm:text-5xl font-semibold text-espresso tabular-nums">000</span>
+            <span class="mt-1.5 font-mono text-[10px] sm:text-[11px] tracking-[0.22em] uppercase text-taupe">Días</span>
+          </div>
+
+          <!-- Horas -->
+          <div class="bg-ivory rounded-2xl border border-gold/30 shadow-boarding px-3 py-5 sm:py-6 flex flex-col items-center relative overflow-hidden">
+            <span class="absolute top-0 inset-x-0 h-1 bg-chocolate"></span>
+            <span id="cd-hours" class="font-serif text-4xl sm:text-5xl font-semibold text-espresso tabular-nums">00</span>
+            <span class="mt-1.5 font-mono text-[10px] sm:text-[11px] tracking-[0.22em] uppercase text-taupe">Horas</span>
+          </div>
+
+          <!-- Minutos -->
+          <div class="bg-ivory rounded-2xl border border-gold/30 shadow-boarding px-3 py-5 sm:py-6 flex flex-col items-center relative overflow-hidden">
+            <span class="absolute top-0 inset-x-0 h-1 bg-gold"></span>
+            <span id="cd-minutes" class="font-serif text-4xl sm:text-5xl font-semibold text-espresso tabular-nums">00</span>
+            <span class="mt-1.5 font-mono text-[10px] sm:text-[11px] tracking-[0.22em] uppercase text-taupe">Minutos</span>
+          </div>
+
+          <!-- Segundos (discreto, visible en sm+ y en fila compacta en móvil) -->
+          <div class="col-span-3 sm:col-span-1 bg-ivory/80 rounded-2xl border border-gold/25 shadow-sm px-4 py-3 sm:py-6 flex sm:flex-col items-center justify-center gap-2 sm:gap-0 relative overflow-hidden">
+            <span class="hidden sm:block absolute top-0 inset-x-0 h-1 bg-taupe/70"></span>
+            <span id="cd-seconds" class="font-serif text-2xl sm:text-5xl font-medium text-taupe tabular-nums">00</span>
+            <span class="sm:mt-1.5 font-mono text-[10px] sm:text-[11px] tracking-[0.22em] uppercase text-taupe/80">Segundos</span>
+          </div>
+        </div>
+
+        <p id="cd-status" class="mt-5 font-serif italic text-base text-chocolate hidden">
+          ¡Llegó el gran día! Nuestro vuelo ha despegado.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 4. ITINERARIO DEL EVENTO (ESTILO BOARDING PASS)           -->
+    <!-- ========================================================= -->
+    <section id="itinerario" class="relative py-20 sm:py-28 px-5 bg-ivory overflow-hidden">
+      <!-- Decoraciones orgánicas estilo acuarela de fondo -->
+      <div class="pointer-events-none select-none absolute inset-0 overflow-hidden" aria-hidden="true">
+        <!-- Lavado acuarela superior izquierdo (arena + durazno empolvado) -->
+        <svg class="watercolor-float absolute -top-20 -left-24 w-80 h-80 sm:w-[28rem] sm:h-[28rem] opacity-75" viewBox="0 0 400 400" fill="none">
+          <g filter="url(#wc-texture-soft)">
+            <ellipse cx="185" cy="185" rx="135" ry="112" fill="url(#wc-grad-sand)" transform="rotate(-18 185 185)" />
+            <ellipse cx="235" cy="145" rx="95" ry="80" fill="url(#wc-grad-peach)" transform="rotate(24 235 145)" />
+            <circle cx="150" cy="235" r="72" fill="url(#wc-grad-champagne)" />
+          </g>
+        </svg>
+
+        <!-- Lavado acuarela inferior derecho (topo suave + dorado champán) -->
+        <svg class="watercolor-float-alt absolute -bottom-24 -right-24 w-80 h-80 sm:w-[30rem] sm:h-[30rem] opacity-75" viewBox="0 0 400 400" fill="none">
+          <g filter="url(#wc-texture-soft)">
+            <ellipse cx="215" cy="215" rx="140" ry="108" fill="url(#wc-grad-taupe)" transform="rotate(16 215 215)" />
+            <ellipse cx="160" cy="245" rx="100" ry="78" fill="url(#wc-grad-champagne)" transform="rotate(-22 160 245)" />
+            <circle cx="260" cy="165" r="76" fill="url(#wc-grad-sand)" />
+          </g>
+        </svg>
+
+        <!-- Lavado acuarela central muy sutil detrás de las tarjetas -->
+        <svg class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[34rem] h-[24rem] opacity-45" viewBox="0 0 500 320" fill="none">
+          <g filter="url(#wc-texture-delicate)">
+            <ellipse cx="250" cy="160" rx="200" ry="105" fill="url(#wc-grad-peach)" transform="rotate(-6 250 160)" />
+            <ellipse cx="290" cy="175" rx="140" ry="85" fill="url(#wc-grad-sand)" />
+          </g>
+        </svg>
+      </div>
+
+      <div class="relative z-10 max-w-4xl mx-auto">
+        <!-- Encabezado -->
+        <div class="text-center mb-12 sm:mb-14 reveal">
+          <span class="font-mono text-[11px] tracking-[0.28em] uppercase text-gold">
+            Tarjetas de Embarque
+          </span>
+          <h2 class="mt-2 font-serif text-4xl sm:text-5xl text-espresso font-medium">
+            Itinerario del Evento
+          </h2>
+          <div class="mt-4 inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-cream border border-gold/35">
+            <span class="font-mono text-xs sm:text-sm tracking-[0.14em] text-espresso font-medium">
+              03/09/2027
+            </span>
+            <span class="text-gold">|</span>
+            <span class="font-mono text-xs sm:text-sm tracking-[0.14em] text-chocolate">
+              Inicio: 21:00 hs
+            </span>
+          </div>
+        </div>
+
+        <!-- Grid de Tarjetas de Embarque -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+
+          <!-- TARJETA 1: CEREMONIA RELIGIOSA -->
+          <article class="reveal bg-cream rounded-3xl border border-gold/35 shadow-boarding overflow-hidden flex flex-col justify-between">
+            <div>
+              <!-- Cabecera Boarding Pass -->
+              <div class="bg-espresso text-ivory px-6 py-4 flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-goldLight" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                  </svg>
+                  <span class="font-mono text-[11px] tracking-[0.24em] uppercase text-goldLight">
+                    Boarding Pass · 01
+                  </span>
+                </div>
+                <span class="font-mono text-[10px] tracking-[0.2em] uppercase text-sand/80">
+                  Vuelo EE-01
+                </span>
+              </div>
+
+              <!-- Cuerpo superior -->
+              <div class="px-6 pt-6 pb-5">
+                <div class="flex items-center justify-between text-left mb-5">
+                  <div>
+                    <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-taupe">Escala</p>
+                    <h3 class="font-serif text-3xl text-espresso font-semibold mt-0.5">
+                      Ceremonia Religiosa
+                    </h3>
+                  </div>
+                  <!-- Ícono fino de iglesia / anillo -->
+                  <div class="w-11 h-11 rounded-full bg-ivory border border-gold/40 flex items-center justify-center text-gold shrink-0">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M12 2v4M10 4h4" />
+                      <path d="M6 21V11l6-5 6 5v10" />
+                      <path d="M10 21v-5a2 2 0 0 1 4 0v5" />
+                      <path d="M3 21h18" />
+                    </svg>
+                  </div>
+                </div>
+
+                <!-- Datos técnicos del pase -->
+                <div class="grid grid-cols-2 gap-4 py-4 border-y border-sand">
+                  <div>
+                    <p class="font-mono text-[10px] tracking-[0.2em] uppercase text-taupe">Destino</p>
+                    <p class="mt-1 text-sm sm:text-base font-medium text-espresso leading-snug">
+                      Parroquia San Luis Rey
+                    </p>
+                  </div>
+                  <div>
+                    <p class="font-mono text-[10px] tracking-[0.2em] uppercase text-taupe">Horario</p>
+                    <p class="mt-1 font-mono text-sm sm:text-base font-bold text-chocolate">
+                      21:00 hs
+                    </p>
+                  </div>
+                </div>
+
+                <div class="mt-4 flex items-center justify-between text-xs text-taupe">
+                  <span class="font-mono uppercase tracking-[0.15em]">Fecha: 03/09/2027</span>
+                  <span class="font-mono uppercase tracking-[0.15em] text-gold">Puerta: Altar</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Línea punteada de corte con muescas semicirculares laterales -->
+            <div class="relative flex items-center py-2">
+              <div class="w-5 h-10 bg-ivory rounded-r-full -ml-2.5 border-y border-r border-gold/30 shrink-0"></div>
+              <div class="w-full border-t-2 border-dashed border-gold/40 mx-1"></div>
+              <div class="w-5 h-10 bg-ivory rounded-l-full -mr-2.5 border-y border-l border-gold/30 shrink-0"></div>
+            </div>
+
+            <!-- Talón inferior con botón y código de barras -->
+            <div class="px-6 pt-3 pb-6 flex flex-col items-center gap-4">
+              <a
+                href="https://maps.app.goo.gl/K5pjkm7qwtj9HyQw7"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full inline-flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl bg-espresso hover:bg-chocolate text-ivory text-xs sm:text-sm font-medium tracking-[0.18em] uppercase transition-colors duration-300 shadow-sm"
+              >
+                <svg class="w-4 h-4 text-goldLight" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <span>Ver ubicación</span>
+              </a>
+
+              <!-- Código de barras decorativo SVG -->
+              <svg class="w-48 h-7 text-espresso/55" viewBox="0 0 200 28" fill="currentColor" aria-hidden="true">
+                <rect x="4" y="0" width="2" height="28"/><rect x="9" y="0" width="4" height="28"/>
+                <rect x="16" y="0" width="1.5" height="28"/><rect x="20" y="0" width="3" height="28"/>
+                <rect x="27" y="0" width="1.5" height="28"/><rect x="31" y="0" width="5" height="28"/>
+                <rect x="39" y="0" width="2" height="28"/><rect x="44" y="0" width="1.5" height="28"/>
+                <rect x="49" y="0" width="4" height="28"/><rect x="56" y="0" width="2" height="28"/>
+                <rect x="61" y="0" width="1.5" height="28"/><rect x="66" y="0" width="3" height="28"/>
+                <rect x="72" y="0" width="4.5" height="28"/><rect x="80" y="0" width="1.5" height="28"/>
+                <rect x="85" y="0" width="2.5" height="28"/><rect x="91" y="0" width="1.5" height="28"/>
+                <rect x="96" y="0" width="4" height="28"/><rect x="103" y="0" width="2" height="28"/>
+                <rect x="108" y="0" width="3.5" height="28"/><rect x="115" y="0" width="1.5" height="28"/>
+                <rect x="120" y="0" width="2" height="28"/><rect x="126" y="0" width="5" height="28"/>
+                <rect x="134" y="0" width="1.5" height="28"/><rect x="139" y="0" width="3" height="28"/>
+                <rect x="145" y="0" width="2" height="28"/><rect x="151" y="0" width="4" height="28"/>
+                <rect x="158" y="0" width="1.5" height="28"/><rect x="163" y="0" width="3" height="28"/>
+                <rect x="170" y="0" width="2" height="28"/><rect x="175" y="0" width="4.5" height="28"/>
+                <rect x="183" y="0" width="1.5" height="28"/><rect x="188" y="0" width="3" height="28"/>
+                <rect x="194" y="0" width="2" height="28"/>
+              </svg>
+            </div>
+          </article>
+
+          <!-- TARJETA 2: CIVIL Y FIESTA -->
+          <article class="reveal bg-cream rounded-3xl border border-gold/35 shadow-boarding overflow-hidden flex flex-col justify-between">
+            <div>
+              <!-- Cabecera Boarding Pass -->
+              <div class="bg-chocolate text-ivory px-6 py-4 flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-goldLight" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                  </svg>
+                  <span class="font-mono text-[11px] tracking-[0.24em] uppercase text-goldLight">
+                    Boarding Pass · 02
+                  </span>
+                </div>
+                <span class="font-mono text-[10px] tracking-[0.2em] uppercase text-sand/80">
+                  Vuelo EE-02
+                </span>
+              </div>
+
+              <!-- Cuerpo superior -->
+              <div class="px-6 pt-6 pb-5">
+                <div class="flex items-center justify-between text-left mb-5">
+                  <div>
+                    <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-taupe">Destino Final</p>
+                    <h3 class="font-serif text-3xl text-espresso font-semibold mt-0.5">
+                      Civil y Fiesta
+                    </h3>
+                  </div>
+                  <!-- Ícono fino de copas / brindis -->
+                  <div class="w-11 h-11 rounded-full bg-ivory border border-gold/40 flex items-center justify-center text-gold shrink-0">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M8 22h8" />
+                      <path d="M12 15v7" />
+                      <path d="M7 3h10l-1.2 7.2a4 4 0 0 1-3.8 3.3 4 4 0 0 1-3.8-3.3L7 3z" />
+                      <path d="M8 7h8" />
+                    </svg>
+                  </div>
+                </div>
+
+                <!-- Datos técnicos del pase -->
+                <div class="grid grid-cols-2 gap-4 py-4 border-y border-sand">
+                  <div>
+                    <p class="font-mono text-[10px] tracking-[0.2em] uppercase text-taupe">Lugar</p>
+                    <p class="mt-1 text-sm sm:text-base font-medium text-espresso leading-snug">
+                      Salón Guiñez Eventos
+                    </p>
+                  </div>
+                  <div>
+                    <p class="font-mono text-[10px] tracking-[0.2em] uppercase text-taupe">Horario</p>
+                    <p class="mt-1 font-mono text-sm sm:text-base font-bold text-chocolate">
+                      Luego de la misa
+                    </p>
+                  </div>
+                </div>
+
+                <div class="mt-4 flex items-center justify-between text-xs text-taupe">
+                  <span class="font-mono uppercase tracking-[0.15em]">Fecha: 03/09/2027</span>
+                  <span class="font-mono uppercase tracking-[0.15em] text-gold">Clase: Celebración</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Línea punteada de corte con muescas semicirculares laterales -->
+            <div class="relative flex items-center py-2">
+              <div class="w-5 h-10 bg-ivory rounded-r-full -ml-2.5 border-y border-r border-gold/30 shrink-0"></div>
+              <div class="w-full border-t-2 border-dashed border-gold/40 mx-1"></div>
+              <div class="w-5 h-10 bg-ivory rounded-l-full -mr-2.5 border-y border-l border-gold/30 shrink-0"></div>
+            </div>
+
+            <!-- Talón inferior con botón y código de barras -->
+            <div class="px-6 pt-3 pb-6 flex flex-col items-center gap-4">
+              <a
+                href="https://maps.app.goo.gl/FNBPwYZsCHrxweaf8"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full inline-flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl bg-chocolate hover:bg-espresso text-ivory text-xs sm:text-sm font-medium tracking-[0.18em] uppercase transition-colors duration-300 shadow-sm"
+              >
+                <svg class="w-4 h-4 text-goldLight" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <span>Ver ubicación</span>
+              </a>
+
+              <!-- Código de barras decorativo SVG -->
+              <svg class="w-48 h-7 text-espresso/55" viewBox="0 0 200 28" fill="currentColor" aria-hidden="true">
+                <rect x="4" y="0" width="3" height="28"/><rect x="10" y="0" width="1.5" height="28"/>
+                <rect x="15" y="0" width="4" height="28"/><rect x="22" y="0" width="2" height="28"/>
+                <rect x="27" y="0" width="3.5" height="28"/><rect x="34" y="0" width="1.5" height="28"/>
+                <rect x="39" y="0" width="2" height="28"/><rect x="45" y="0" width="5" height="28"/>
+                <rect x="53" y="0" width="1.5" height="28"/><rect x="58" y="0" width="3" height="28"/>
+                <rect x="64" y="0" width="2" height="28"/><rect x="70" y="0" width="4" height="28"/>
+                <rect x="77" y="0" width="1.5" height="28"/><rect x="82" y="0" width="3" height="28"/>
+                <rect x="89" y="0" width="2" height="28"/><rect x="94" y="0" width="4.5" height="28"/>
+                <rect x="102" y="0" width="1.5" height="28"/><rect x="107" y="0" width="2.5" height="28"/>
+                <rect x="113" y="0" width="1.5" height="28"/><rect x="118" y="0" width="4" height="28"/>
+                <rect x="125" y="0" width="2" height="28"/><rect x="131" y="0" width="3.5" height="28"/>
+                <rect x="138" y="0" width="1.5" height="28"/><rect x="143" y="0" width="2" height="28"/>
+                <rect x="149" y="0" width="5" height="28"/><rect x="157" y="0" width="1.5" height="28"/>
+                <rect x="162" y="0" width="3" height="28"/><rect x="168" y="0" width="2" height="28"/>
+                <rect x="174" y="0" width="4" height="28"/><rect x="181" y="0" width="1.5" height="28"/>
+                <rect x="186" y="0" width="3" height="28"/><rect x="193" y="0" width="2" height="28"/>
+              </svg>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 5. MENSAJE INTERMEDIO DE AMOR                             -->
+    <!-- ========================================================= -->
+    <section class="relative py-20 sm:py-24 px-5 bg-chocolate text-ivory overflow-hidden">
+      <!-- Avioncito minimalista cruzando suavemente de derecha a izquierda -->
+      <div class="pointer-events-none select-none absolute top-5 inset-x-0 h-10 overflow-hidden" aria-hidden="true">
+        <svg class="w-full h-full opacity-25" viewBox="0 0 1200 40" preserveAspectRatio="none" fill="none">
+          <path d="M1220 24 Q 900 8, 600 24 T -20 18" stroke="#C8A96E" stroke-width="1" stroke-dasharray="3 6" />
+        </svg>
+        <div class="bg-plane-left absolute top-1.5 left-0 text-goldLight/75">
+          <svg class="w-4 h-4 rotate-90" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="relative z-10 max-w-3xl mx-auto text-center reveal">
+        <!-- Ruta punteada con avión -->
+        <div class="flex items-center justify-center gap-3 mb-7 text-goldLight" aria-hidden="true">
+          <span class="w-2 h-2 rounded-full bg-goldLight"></span>
+          <span class="w-16 sm:w-28 border-t border-dashed border-goldLight/60"></span>
+          <svg class="w-5 h-5 rotate-90" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+          </svg>
+          <span class="w-16 sm:w-28 border-t border-dashed border-goldLight/60"></span>
+          <span class="w-2 h-2 rounded-full bg-goldLight"></span>
+        </div>
+
+        <p class="font-serif italic text-2xl sm:text-3xl md:text-4xl leading-relaxed text-ivory/95 font-normal">
+          “Cada kilómetro recorrido nos trajo hasta aquí. Hoy sellamos nuestro pasaporte para toda la vida.”
+        </p>
+
+        <p class="mt-6 font-mono text-[10px] sm:text-xs tracking-[0.3em] uppercase text-goldLight/85">
+          Destino: Para siempre
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 6. GALERÍA DE FOTOS ("BITÁCORA DE NUESTRO VIAJE")         -->
+    <!-- ========================================================= -->
+    <section id="galeria" class="relative py-20 sm:py-28 px-5 bg-cream overflow-hidden">
+      <!-- Decoraciones orgánicas estilo acuarela de fondo -->
+      <div class="pointer-events-none select-none absolute inset-0 overflow-hidden" aria-hidden="true">
+        <!-- Lavado acuarela superior derecho (arena + dorado champán) -->
+        <svg class="watercolor-float absolute -top-20 -right-24 w-80 h-80 sm:w-[28rem] sm:h-[28rem] opacity-75" viewBox="0 0 400 400" fill="none">
+          <g filter="url(#wc-texture-soft)">
+            <ellipse cx="210" cy="185" rx="138" ry="108" fill="url(#wc-grad-sand)" transform="rotate(15 210 185)" />
+            <ellipse cx="165" cy="150" rx="95" ry="80" fill="url(#wc-grad-champagne)" transform="rotate(-20 165 150)" />
+            <circle cx="245" cy="235" r="70" fill="url(#wc-grad-peach)" />
+          </g>
+        </svg>
+
+        <!-- Lavado acuarela inferior izquierdo (durazno empolvado + topo suave) -->
+        <svg class="watercolor-float-alt absolute -bottom-24 -left-24 w-80 h-80 sm:w-[30rem] sm:h-[30rem] opacity-70" viewBox="0 0 400 400" fill="none">
+          <g filter="url(#wc-texture-soft)">
+            <ellipse cx="190" cy="215" rx="140" ry="110" fill="url(#wc-grad-peach)" transform="rotate(-14 190 215)" />
+            <ellipse cx="240" cy="245" rx="98" ry="76" fill="url(#wc-grad-taupe)" transform="rotate(20 240 245)" />
+            <circle cx="150" cy="165" r="74" fill="url(#wc-grad-champagne)" />
+          </g>
+        </svg>
+      </div>
+
+      <div class="relative z-10 max-w-5xl mx-auto">
+        <!-- Encabezado de la galería -->
+        <div class="text-center mb-12 sm:mb-14 reveal">
+          <span class="font-mono text-[11px] tracking-[0.28em] uppercase text-gold">
+            Postales de nuestro recorrido
+          </span>
+          <h2 class="mt-2 font-serif text-4xl sm:text-5xl text-espresso font-medium">
+            Bitácora de nuestro viaje
+          </h2>
+          <p class="mt-3 text-sm sm:text-base text-taupe max-w-md mx-auto">
+            Algunos de los recuerdos que fuimos coleccionando en cada escala. Tocá cualquier postal para verla en grande.
+          </p>
+        </div>
+
+        <!-- Cuadrícula estilo postales de viaje -->
+        <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-7 reveal">
+          <!-- Postal 01: Puente colgante -->
+          <button
+            type="button"
+            data-index="0"
+            class="gallery-item group sm:col-span-2 bg-ivory p-3 pb-4 rounded-2xl border border-gold/35 shadow-boarding hover:shadow-xl -rotate-1 hover:rotate-0 hover:-translate-y-1 transition-all duration-300 text-left focus:outline-none focus:ring-2 focus:ring-gold"
+          >
+            <div class="relative aspect-[16/10] w-full overflow-hidden rounded-xl bg-sand">
+              <img
+                src="769091.webp"
+                alt="Estrella y Emanuel cruzando un puente colgante rojo"
+                loading="lazy"
+                onerror="this.onerror=null;this.src='https://placehold.co/900x560/E8DFD1/5C4033?text=Estrella+y+Emanuel';"
+                class="w-full h-full object-cover object-[center_20%] transition-transform duration-500 group-hover:scale-105"
+              />
+              <!-- Sello postal minimalista -->
+              <span class="absolute top-2.5 right-2.5 px-2 py-1 rounded border border-dashed border-goldLight/80 bg-espresso/75 backdrop-blur-sm font-mono text-[9px] tracking-[0.18em] uppercase text-ivory">
+                POSTAL 01
+              </span>
+            </div>
+            <div class="mt-3 px-1 flex items-center justify-between gap-2">
+              <span class="font-serif italic text-base text-espresso">Cruzando caminos juntos</span>
+              <span class="inline-flex items-center gap-1 font-mono text-[9px] tracking-[0.2em] uppercase text-gold border border-dashed border-gold/50 rounded px-1.5 py-0.5">
+                ✈ AIR MAIL
+              </span>
+            </div>
+          </button>
+
+          <!-- Postal 02: Playa frente al lago -->
+          <button
+            type="button"
+            data-index="1"
+            class="gallery-item group bg-ivory p-3 pb-4 rounded-2xl border border-gold/35 shadow-boarding hover:shadow-xl rotate-1 hover:rotate-0 hover:-translate-y-1 transition-all duration-300 text-left focus:outline-none focus:ring-2 focus:ring-gold flex flex-col justify-between"
+          >
+            <div class="relative aspect-[4/5] md:aspect-auto md:flex-1 w-full overflow-hidden rounded-xl bg-sand">
+              <img
+                src="769090.webp"
+                alt="Estrella y Emanuel en la playa frente al lago"
+                loading="lazy"
+                onerror="this.onerror=null;this.src='https://placehold.co/600x750/E8DFD1/5C4033?text=Estrella+y+Emanuel';"
+                class="w-full h-full object-cover object-[center_20%] transition-transform duration-500 group-hover:scale-105"
+              />
+              <span class="absolute top-2.5 right-2.5 px-2 py-1 rounded border border-dashed border-goldLight/80 bg-espresso/75 backdrop-blur-sm font-mono text-[9px] tracking-[0.18em] uppercase text-ivory">
+                POSTAL 02
+              </span>
+            </div>
+            <div class="mt-3 px-1 flex items-center justify-between gap-2">
+              <span class="font-serif italic text-base text-espresso">Tardes junto al agua</span>
+              <span class="inline-flex items-center gap-1 font-mono text-[9px] tracking-[0.18em] uppercase text-gold border border-dashed border-gold/50 rounded px-1.5 py-0.5">
+                ✦ E&amp;E
+              </span>
+            </div>
+          </button>
+
+          <!-- Postal 03: Jardín Japonés -->
+          <button
+            type="button"
+            data-index="2"
+            class="gallery-item group bg-ivory p-3 pb-4 rounded-2xl border border-gold/35 shadow-boarding hover:shadow-xl rotate-1 hover:rotate-0 hover:-translate-y-1 transition-all duration-300 text-left focus:outline-none focus:ring-2 focus:ring-gold"
+          >
+            <div class="relative aspect-[4/5] w-full overflow-hidden rounded-xl bg-sand">
+              <img
+                src="769089.webp"
+                alt="Estrella y Emanuel sonriendo en el Jardín Japonés"
+                loading="lazy"
+                onerror="this.onerror=null;this.src='https://placehold.co/600x750/E8DFD1/5C4033?text=Estrella+y+Emanuel';"
+                class="w-full h-full object-cover object-[center_20%] transition-transform duration-500 group-hover:scale-105"
+              />
+              <span class="absolute top-2.5 right-2.5 px-2 py-1 rounded border border-dashed border-goldLight/80 bg-espresso/75 backdrop-blur-sm font-mono text-[9px] tracking-[0.18em] uppercase text-ivory">
+                POSTAL 03
+              </span>
+            </div>
+            <div class="mt-3 px-1 flex items-center justify-between gap-2">
+              <span class="font-serif italic text-base text-espresso">Sonrisas en el jardín</span>
+              <span class="inline-flex items-center gap-1 font-mono text-[9px] tracking-[0.18em] uppercase text-gold border border-dashed border-gold/50 rounded px-1.5 py-0.5">
+                ✈ VIAJE
+              </span>
+            </div>
+          </button>
+
+          <!-- Postal 04: Abrazados sonriendo -->
+          <button
+            type="button"
+            data-index="3"
+            class="gallery-item group bg-ivory p-3 pb-4 rounded-2xl border border-gold/35 shadow-boarding hover:shadow-xl -rotate-1 hover:rotate-0 hover:-translate-y-1 transition-all duration-300 text-left focus:outline-none focus:ring-2 focus:ring-gold"
+          >
+            <div class="relative aspect-[4/5] w-full overflow-hidden rounded-xl bg-sand">
+              <img
+                src="769088.webp"
+                alt="Estrella y Emanuel abrazados y sonriendo"
+                loading="lazy"
+                onerror="this.onerror=null;this.src='https://placehold.co/600x750/E8DFD1/5C4033?text=Estrella+y+Emanuel';"
+                class="w-full h-full object-cover object-[center_20%] transition-transform duration-500 group-hover:scale-105"
+              />
+              <span class="absolute top-2.5 right-2.5 px-2 py-1 rounded border border-dashed border-goldLight/80 bg-espresso/75 backdrop-blur-sm font-mono text-[9px] tracking-[0.18em] uppercase text-ivory">
+                POSTAL 04
+              </span>
+            </div>
+            <div class="mt-3 px-1 flex items-center justify-between gap-2">
+              <span class="font-serif italic text-base text-espresso">Nuestro lugar favorito</span>
+              <span class="inline-flex items-center gap-1 font-mono text-[9px] tracking-[0.18em] uppercase text-gold border border-dashed border-gold/50 rounded px-1.5 py-0.5">
+                ♥ HOGAR
+              </span>
+            </div>
+          </button>
+
+          <!-- Postal 05: Reloj Cucú de noche -->
+          <button
+            type="button"
+            data-index="4"
+            class="gallery-item group bg-ivory p-3 pb-4 rounded-2xl border border-gold/35 shadow-boarding hover:shadow-xl rotate-1 hover:rotate-0 hover:-translate-y-1 transition-all duration-300 text-left focus:outline-none focus:ring-2 focus:ring-gold"
+          >
+            <div class="relative aspect-[4/5] w-full overflow-hidden rounded-xl bg-sand">
+              <img
+                src="769086.webp"
+                alt="Estrella y Emanuel de noche frente al Reloj Cucú"
+                loading="lazy"
+                onerror="this.onerror=null;this.src='https://placehold.co/600x750/E8DFD1/5C4033?text=Estrella+y+Emanuel';"
+                class="w-full h-full object-cover object-[center_20%] transition-transform duration-500 group-hover:scale-105"
+              />
+              <span class="absolute top-2.5 right-2.5 px-2 py-1 rounded border border-dashed border-goldLight/80 bg-espresso/75 backdrop-blur-sm font-mono text-[9px] tracking-[0.18em] uppercase text-ivory">
+                POSTAL 05
+              </span>
+            </div>
+            <div class="mt-3 px-1 flex items-center justify-between gap-2">
+              <span class="font-serif italic text-base text-espresso">Noches de aventura</span>
+              <span class="inline-flex items-center gap-1 font-mono text-[9px] tracking-[0.18em] uppercase text-gold border border-dashed border-gold/50 rounded px-1.5 py-0.5">
+                ☾ RUTA
+              </span>
+            </div>
+          </button>
+
+          <!-- Postal 06: Estatua de la Libertad -->
+          <button
+            type="button"
+            data-index="5"
+            class="gallery-item group bg-ivory p-3 pb-4 rounded-2xl border border-gold/35 shadow-boarding hover:shadow-xl -rotate-1 hover:rotate-0 hover:-translate-y-1 transition-all duration-300 text-left focus:outline-none focus:ring-2 focus:ring-gold flex flex-col justify-between"
+          >
+            <div class="relative aspect-[4/5] md:aspect-auto md:flex-1 w-full overflow-hidden rounded-xl bg-sand">
+              <img
+                src="769085.webp"
+                alt="Estrella y Emanuel frente a la Estatua de la Libertad"
+                loading="lazy"
+                onerror="this.onerror=null;this.src='https://placehold.co/600x750/E8DFD1/5C4033?text=Estrella+y+Emanuel';"
+                class="w-full h-full object-cover object-[center_20%] transition-transform duration-500 group-hover:scale-105"
+              />
+              <span class="absolute top-2.5 right-2.5 px-2 py-1 rounded border border-dashed border-goldLight/80 bg-espresso/75 backdrop-blur-sm font-mono text-[9px] tracking-[0.18em] uppercase text-ivory">
+                POSTAL 06
+              </span>
+            </div>
+            <div class="mt-3 px-1 flex items-center justify-between gap-2">
+              <span class="font-serif italic text-base text-espresso">Soñando en grande</span>
+              <span class="inline-flex items-center gap-1 font-mono text-[9px] tracking-[0.18em] uppercase text-gold border border-dashed border-gold/50 rounded px-1.5 py-0.5">
+                ✈ NYC
+              </span>
+            </div>
+          </button>
+
+          <!-- Postal 07: Lago y montañas -->
+          <button
+            type="button"
+            data-index="6"
+            class="gallery-item group sm:col-span-2 bg-ivory p-3 pb-4 rounded-2xl border border-gold/35 shadow-boarding hover:shadow-xl rotate-1 hover:rotate-0 hover:-translate-y-1 transition-all duration-300 text-left focus:outline-none focus:ring-2 focus:ring-gold"
+          >
+            <div class="relative aspect-[16/10] w-full overflow-hidden rounded-xl bg-sand">
+              <img
+                src="769084.webp"
+                alt="Estrella y Emanuel abrigados frente al lago y las montañas"
+                loading="lazy"
+                onerror="this.onerror=null;this.src='https://placehold.co/900x560/E8DFD1/5C4033?text=Estrella+y+Emanuel';"
+                class="w-full h-full object-cover object-[center_20%] transition-transform duration-500 group-hover:scale-105"
+              />
+              <span class="absolute top-2.5 right-2.5 px-2 py-1 rounded border border-dashed border-goldLight/80 bg-espresso/75 backdrop-blur-sm font-mono text-[9px] tracking-[0.18em] uppercase text-ivory">
+                POSTAL 07
+              </span>
+            </div>
+            <div class="mt-3 px-1 flex items-center justify-between gap-2">
+              <span class="font-serif italic text-base text-espresso">Entre montañas y abrazos</span>
+              <span class="inline-flex items-center gap-1 font-mono text-[9px] tracking-[0.2em] uppercase text-gold border border-dashed border-gold/50 rounded px-1.5 py-0.5">
+                ✈ AIR MAIL
+              </span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Avioncito sutil cruzando entre Bitácora y Check-in -->
+      <div class="pointer-events-none select-none absolute bottom-3 inset-x-0 h-10 overflow-hidden" aria-hidden="true">
+        <svg class="w-full h-full opacity-35" viewBox="0 0 1200 40" preserveAspectRatio="none" fill="none">
+          <path d="M-20 20 Q 320 34, 620 18 T 1220 26" stroke="#B8955A" stroke-width="1" stroke-dasharray="4 6" />
+        </svg>
+        <div class="bg-plane-right absolute top-1.5 left-0 text-gold/75" style="animation-delay: -9s;">
+          <svg class="w-4 h-4 rotate-90" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 7. CONFIRMACIÓN DE ASISTENCIA ("CHECK-IN" + WHATSAPP)     -->
+    <!-- ========================================================= -->
+    <section id="checkin" class="relative py-20 sm:py-28 px-5 bg-ivory overflow-hidden border-t border-sand">
+      <!-- Fondo con destellos y brillos dorados animados -->
+      <div class="pointer-events-none select-none absolute inset-0 overflow-hidden" aria-hidden="true">
+        <!-- Halo cálido dorado suave detrás del pase -->
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[26rem] h-[26rem] sm:w-[38rem] sm:h-[38rem] rounded-full opacity-45"
+          style="background: radial-gradient(circle, rgba(200, 169, 110, 0.28) 0%, rgba(232, 223, 209, 0.14) 50%, rgba(250, 247, 242, 0) 75%);"
+        ></div>
+
+        <!-- Estrellas de 4 puntas doradas titilando -->
+        <svg class="sparkle-star absolute top-[12%] left-[8%] sm:left-[14%] w-6 h-6 text-gold" style="--dur: 3.8s; --delay: 0s;" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0L14.4 9.6L24 12L14.4 14.4L12 24L9.6 14.4L0 12L9.6 9.6L12 0Z"/>
+        </svg>
+        <svg class="sparkle-star absolute top-[20%] right-[10%] sm:right-[16%] w-5 h-5 text-goldLight" style="--dur: 4.6s; --delay: 0.9s;" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0L14.4 9.6L24 12L14.4 14.4L12 24L9.6 14.4L0 12L9.6 9.6L12 0Z"/>
+        </svg>
+        <svg class="sparkle-star absolute top-[46%] left-[5%] sm:left-[10%] w-4 h-4 text-gold/80" style="--dur: 5.1s; --delay: 1.7s;" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0L14.4 9.6L24 12L14.4 14.4L12 24L9.6 14.4L0 12L9.6 9.6L12 0Z"/>
+        </svg>
+        <svg class="sparkle-star absolute top-[58%] right-[6%] sm:right-[11%] w-6 h-6 text-gold/90" style="--dur: 4.2s; --delay: 0.4s;" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0L14.4 9.6L24 12L14.4 14.4L12 24L9.6 14.4L0 12L9.6 9.6L12 0Z"/>
+        </svg>
+        <svg class="sparkle-star absolute bottom-[16%] left-[12%] sm:left-[18%] w-5 h-5 text-goldLight" style="--dur: 4.9s; --delay: 2.1s;" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0L14.4 9.6L24 12L14.4 14.4L12 24L9.6 14.4L0 12L9.6 9.6L12 0Z"/>
+        </svg>
+        <svg class="sparkle-star absolute bottom-[12%] right-[14%] sm:right-[20%] w-4 h-4 text-gold" style="--dur: 3.6s; --delay: 1.3s;" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0L14.4 9.6L24 12L14.4 14.4L12 24L9.6 14.4L0 12L9.6 9.6L12 0Z"/>
+        </svg>
+
+        <!-- Partículas luminosas flotantes -->
+        <span class="sparkle-dot absolute top-[16%] left-[30%] w-2 h-2 rounded-full bg-goldLight/80 shadow-[0_0_10px_rgba(200,169,110,0.85)]" style="--dur: 5.2s; --delay: 0.3s;"></span>
+        <span class="sparkle-dot absolute top-[32%] right-[24%] w-1.5 h-1.5 rounded-full bg-gold/80 shadow-[0_0_8px_rgba(184,149,90,0.85)]" style="--dur: 6s; --delay: 1.4s;"></span>
+        <span class="sparkle-dot absolute bottom-[30%] left-[22%] w-2 h-2 rounded-full bg-gold/75 shadow-[0_0_10px_rgba(184,149,90,0.8)]" style="--dur: 5.8s; --delay: 2.2s;"></span>
+        <span class="sparkle-dot absolute bottom-[22%] right-[28%] w-1.5 h-1.5 rounded-full bg-goldLight/85 shadow-[0_0_8px_rgba(200,169,110,0.9)]" style="--dur: 4.9s; --delay: 0.8s;"></span>
+        <span class="sparkle-dot absolute top-[72%] left-[8%] w-1.5 h-1.5 rounded-full bg-goldLight/75 shadow-[0_0_8px_rgba(200,169,110,0.8)]" style="--dur: 5.5s; --delay: 1.9s;"></span>
+        <span class="sparkle-dot absolute top-[26%] left-[18%] w-1.5 h-1.5 rounded-full bg-gold/70 shadow-[0_0_8px_rgba(184,149,90,0.75)]" style="--dur: 6.4s; --delay: 2.8s;"></span>
+      </div>
+
+      <div class="relative z-10 max-w-xl mx-auto">
+        <!-- Encabezado -->
+        <div class="text-center mb-10 reveal">
+          <span class="font-mono text-[11px] tracking-[0.28em] uppercase text-gold">
+            Confirmación de Asistencia
+          </span>
+          <h2 class="mt-2 font-serif text-4xl sm:text-5xl text-espresso font-medium">
+            Check-in
+          </h2>
+          <p class="mt-3 text-sm sm:text-base text-taupe max-w-md mx-auto">
+            Completá tus datos para emitir tu pase de abordar y confirmar tu presencia por WhatsApp.
+          </p>
+        </div>
+
+        <!-- Tarjeta estilo Pase de Abordar (Boarding Pass RSVP) -->
+        <div class="reveal bg-cream rounded-3xl border border-gold/40 shadow-boarding overflow-hidden relative">
+          <!-- Cabecera Boarding Pass -->
+          <div class="bg-espresso text-ivory px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+              <svg class="w-4 h-4 text-goldLight" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+              </svg>
+              <span class="font-mono text-[11px] tracking-[0.24em] uppercase text-goldLight">
+                Boarding Pass · Check-in
+              </span>
+            </div>
+            <span class="font-mono text-[10px] tracking-[0.2em] uppercase text-sand/85">
+              03.09.2027
+            </span>
+          </div>
+
+          <!-- Formulario RSVP -->
+          <form id="rsvp-form" novalidate class="px-6 sm:px-8 pt-7 pb-5 space-y-6">
+            <!-- Resumen de ruta estilo pase -->
+            <div class="flex items-center justify-between py-3 px-4 rounded-2xl bg-ivory/85 border border-sand">
+              <div>
+                <p class="font-mono text-[9px] tracking-[0.22em] uppercase text-taupe">Origen</p>
+                <p class="font-serif text-lg sm:text-xl text-espresso font-semibold">Tu presencia</p>
+              </div>
+              <div class="flex items-center gap-2 text-gold" aria-hidden="true">
+                <span class="w-6 sm:w-10 border-t border-dashed border-gold/60"></span>
+                <svg class="w-4 h-4 rotate-90" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                </svg>
+                <span class="w-6 sm:w-10 border-t border-dashed border-gold/60"></span>
+              </div>
+              <div class="text-right">
+                <p class="font-mono text-[9px] tracking-[0.22em] uppercase text-taupe">Destino</p>
+                <p class="font-serif text-lg sm:text-xl text-espresso font-semibold">Boda E &amp; E</p>
+              </div>
+            </div>
+
+            <!-- Campo: Nombre y Apellido -->
+            <div>
+              <label for="guest-name" class="block font-mono text-[11px] tracking-[0.2em] uppercase text-chocolate mb-2">
+                Nombre y Apellido
+              </label>
+              <input
+                type="text"
+                id="guest-name"
+                name="guest-name"
+                autocomplete="name"
+                required
+                placeholder="Ej: Sofía Martínez"
+                class="w-full px-4 py-3.5 rounded-xl bg-ivory border border-gold/40 text-espresso placeholder:text-taupe/60 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold transition-all"
+              />
+              <p id="name-error" class="hidden mt-2 text-xs text-red-700 font-medium">
+                Por favor, ingresá tu nombre y apellido para completar el check-in.
+              </p>
+            </div>
+
+            <!-- Control: Cantidad de asistentes -->
+            <div>
+              <span class="block font-mono text-[11px] tracking-[0.2em] uppercase text-chocolate mb-2">
+                Cantidad de personas que asistirán
+              </span>
+              <div class="flex items-center justify-between gap-4 px-4 py-3 rounded-xl bg-ivory border border-gold/40">
+                <button
+                  type="button"
+                  id="qty-minus"
+                  aria-label="Disminuir cantidad de asistentes"
+                  class="w-11 h-11 rounded-xl bg-cream hover:bg-sand text-espresso border border-gold/35 flex items-center justify-center text-xl font-medium transition-colors active:scale-95"
+                >
+                  −
+                </button>
+
+                <div class="text-center">
+                  <span id="guest-count" class="block font-serif text-3xl sm:text-4xl font-semibold text-espresso leading-none tabular-nums">
+                    1
+                  </span>
+                  <span id="guest-count-label" class="block mt-1 font-mono text-[10px] tracking-[0.22em] uppercase text-taupe">
+                    Pasajero
+                  </span>
+                </div>
+
+                <button
+                  type="button"
+                  id="qty-plus"
+                  aria-label="Aumentar cantidad de asistentes"
+                  class="w-11 h-11 rounded-xl bg-cream hover:bg-sand text-espresso border border-gold/35 flex items-center justify-center text-xl font-medium transition-colors active:scale-95"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+
+            <!-- Botón destacado de confirmación por WhatsApp -->
+            <button
+              type="submit"
+              class="w-full inline-flex items-center justify-center gap-3 px-6 py-4 rounded-xl bg-espresso hover:bg-chocolate text-ivory font-sans font-medium text-xs sm:text-sm tracking-[0.18em] uppercase transition-all duration-300 shadow-md hover:shadow-lg active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-cream"
+            >
+              <!-- Ícono de WhatsApp SVG -->
+              <svg class="w-5 h-5 text-goldLight shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M20.52 3.48A11.82 11.82 0 0 0 12.06 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.15 1.59 5.95L0 24l6.33-1.66a11.86 11.86 0 0 0 5.73 1.46h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.45-8.42zM12.07 21.8h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.76.99 1-3.66-.24-.38a9.87 9.87 0 0 1-1.51-5.26c0-5.45 4.44-9.89 9.9-9.89 2.64 0 5.13 1.03 7 2.9a9.83 9.83 0 0 1 2.9 7c0 5.46-4.44 9.89-9.89 9.89zm5.42-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35z"/>
+              </svg>
+              <span>Confirmar asistencia</span>
+            </button>
+
+            <!-- Mensaje de confirmación en pantalla -->
+            <div
+              id="rsvp-feedback"
+              class="hidden rounded-xl bg-ivory border border-gold/45 px-4 py-3 text-center text-xs sm:text-sm text-chocolate"
+            >
+              ¡Listo! Se abrió WhatsApp con tu mensaje prellenado para completar el Check-in.
+            </div>
+          </form>
+
+          <!-- Línea punteada de corte con muescas semicirculares laterales -->
+          <div class="relative flex items-center py-2">
+            <div class="w-5 h-10 bg-ivory rounded-r-full -ml-2.5 border-y border-r border-gold/30 shrink-0"></div>
+            <div class="w-full border-t-2 border-dashed border-gold/40 mx-1"></div>
+            <div class="w-5 h-10 bg-ivory rounded-l-full -mr-2.5 border-y border-l border-gold/30 shrink-0"></div>
+          </div>
+
+          <!-- Talón inferior del pase con sello y código de barras -->
+          <div class="px-6 sm:px-8 pt-2 pb-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="text-center sm:text-left">
+              <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-taupe">
+                WhatsApp RSVP
+              </p>
+              <p class="font-mono text-xs text-chocolate mt-0.5">
+                +54 9 266 466-6110
+              </p>
+            </div>
+
+            <!-- Código de barras decorativo SVG -->
+            <svg class="w-44 h-7 text-espresso/55" viewBox="0 0 200 28" fill="currentColor" aria-hidden="true">
+              <rect x="4" y="0" width="2" height="28"/><rect x="9" y="0" width="4" height="28"/>
+              <rect x="16" y="0" width="1.5" height="28"/><rect x="20" y="0" width="3" height="28"/>
+              <rect x="27" y="0" width="1.5" height="28"/><rect x="31" y="0" width="5" height="28"/>
+              <rect x="39" y="0" width="2" height="28"/><rect x="44" y="0" width="1.5" height="28"/>
+              <rect x="49" y="0" width="4" height="28"/><rect x="56" y="0" width="2" height="28"/>
+              <rect x="61" y="0" width="1.5" height="28"/><rect x="66" y="0" width="3" height="28"/>
+              <rect x="72" y="0" width="4.5" height="28"/><rect x="80" y="0" width="1.5" height="28"/>
+              <rect x="85" y="0" width="2.5" height="28"/><rect x="91" y="0" width="1.5" height="28"/>
+              <rect x="96" y="0" width="4" height="28"/><rect x="103" y="0" width="2" height="28"/>
+              <rect x="108" y="0" width="3.5" height="28"/><rect x="115" y="0" width="1.5" height="28"/>
+              <rect x="120" y="0" width="2" height="28"/><rect x="126" y="0" width="5" height="28"/>
+              <rect x="134" y="0" width="1.5" height="28"/><rect x="139" y="0" width="3" height="28"/>
+              <rect x="145" y="0" width="2" height="28"/><rect x="151" y="0" width="4" height="28"/>
+              <rect x="158" y="0" width="1.5" height="28"/><rect x="163" y="0" width="3" height="28"/>
+              <rect x="170" y="0" width="2" height="28"/><rect x="175" y="0" width="4.5" height="28"/>
+              <rect x="183" y="0" width="1.5" height="28"/><rect x="188" y="0" width="3" height="28"/>
+              <rect x="194" y="0" width="2" height="28"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================= -->
+  <!-- 8. CIERRE EMOTIVO (FOOTER CON ESTRELLAS Y LUNAS DORADAS)  -->
+  <!-- ========================================================= -->
+  <footer class="relative bg-espresso passport-texture text-ivory py-20 sm:py-24 px-5 border-t border-gold/30 overflow-hidden">
+    <!-- Decoraciones doradas animadas de fondo: lunas crecientes, estrellas y destellos -->
+    <div class="pointer-events-none select-none absolute inset-0 overflow-hidden" aria-hidden="true">
+      <!-- Halo nocturno dorado suave -->
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[28rem] h-[28rem] sm:w-[40rem] sm:h-[40rem] rounded-full opacity-35"
+        style="background: radial-gradient(circle, rgba(200, 169, 110, 0.24) 0%, rgba(184, 149, 90, 0.08) 45%, rgba(59, 40, 32, 0) 72%);"
+      ></div>
+
+      <!-- Luna creciente dorada izquierda -->
+      <svg class="footer-moon absolute top-[14%] left-[7%] sm:left-[12%] w-10 h-10 sm:w-12 sm:h-12 text-goldLight/80" style="--dur: 8.2s; --delay: 0s;" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/>
+      </svg>
+
+      <!-- Luna creciente dorada derecha (contorno fino elegante) -->
+      <svg class="footer-moon absolute bottom-[16%] right-[7%] sm:right-[13%] w-9 h-9 sm:w-11 sm:h-11 text-goldLight/75" style="--dur: 9.4s; --delay: 1.8s;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/>
+      </svg>
+
+      <!-- Luna creciente pequeña superior derecha -->
+      <svg class="footer-moon absolute top-[18%] right-[16%] sm:right-[22%] w-6 h-6 text-gold/75" style="--dur: 7.2s; --delay: 3.1s;" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/>
+      </svg>
+
+      <!-- Estrellas de 4 puntas doradas -->
+      <svg class="footer-star absolute top-[22%] left-[22%] w-5 h-5 text-goldLight" style="--dur: 3.8s; --delay: 0.2s;" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 0L14.4 9.6L24 12L14.4 14.4L12 24L9.6 14.4L0 12L9.6 9.6L12 0Z"/>
+      </svg>
+      <svg class="footer-star absolute top-[34%] right-[9%] sm:right-[15%] w-6 h-6 text-goldLight" style="--dur: 4.5s; --delay: 1.1s;" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 0L14.4 9.6L24 12L14.4 14.4L12 24L9.6 14.4L0 12L9.6 9.6L12 0Z"/>
+      </svg>
+      <svg class="footer-star absolute bottom-[22%] left-[12%] sm:left-[18%] w-5 h-5 text-goldLight/90" style="--dur: 4.9s; --delay: 2s;" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 0L14.4 9.6L24 12L14.4 14.4L12 24L9.6 14.4L0 12L9.6 9.6L12 0Z"/>
+      </svg>
+      <svg class="footer-star absolute bottom-[12%] left-[34%] w-3.5 h-3.5 text-goldLight/80" style="--dur: 3.5s; --delay: 0.7s;" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 0L14.2 9.8L24 12L14.2 14.2L12 24L9.8 14.2L0 12L9.8 9.8L12 0Z"/>
+      </svg>
+
+      <!-- Estrellas de 5 puntas doradas -->
+      <svg class="footer-star absolute top-[12%] left-[44%] w-4 h-4 text-goldLight/85" style="--dur: 5.2s; --delay: 1.4s;" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/>
+      </svg>
+      <svg class="footer-star absolute bottom-[28%] right-[24%] w-4 h-4 text-gold/85" style="--dur: 4.3s; --delay: 2.5s;" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/>
+      </svg>
+      <svg class="footer-star absolute top-[54%] left-[6%] sm:left-[10%] w-3.5 h-3.5 text-goldLight/75" style="--dur: 4.1s; --delay: 0.5s;" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/>
+      </svg>
+
+      <!-- Destellos sutiles (polvo de estrellas dorado) -->
+      <span class="sparkle-dot absolute top-[28%] left-[32%] w-1.5 h-1.5 rounded-full bg-goldLight/80 shadow-[0_0_8px_rgba(200,169,110,0.9)]" style="--dur: 5.4s; --delay: 0.4s;"></span>
+      <span class="sparkle-dot absolute top-[46%] right-[28%] w-2 h-2 rounded-full bg-goldLight/70 shadow-[0_0_10px_rgba(200,169,110,0.85)]" style="--dur: 6.2s; --delay: 1.6s;"></span>
+      <span class="sparkle-dot absolute bottom-[18%] right-[38%] w-1.5 h-1.5 rounded-full bg-gold/80 shadow-[0_0_8px_rgba(184,149,90,0.85)]" style="--dur: 4.8s; --delay: 2.3s;"></span>
+      <span class="sparkle-dot absolute bottom-[36%] left-[24%] w-1.5 h-1.5 rounded-full bg-goldLight/75 shadow-[0_0_8px_rgba(200,169,110,0.85)]" style="--dur: 5.8s; --delay: 0.9s;"></span>
+    </div>
+
+    <div class="relative z-10 max-w-2xl mx-auto text-center flex flex-col items-center reveal">
+      <!-- Emblema elegante con nombres completos (sin iniciales abreviadas) -->
+      <div class="mb-8 px-7 py-5 sm:px-10 sm:py-6 rounded-2xl border border-goldLight/45 bg-espresso/60 backdrop-blur-sm shadow-lg relative">
+        <!-- Filigrana interior punteada -->
+        <div class="pointer-events-none absolute inset-1.5 rounded-xl border border-dashed border-goldLight/30" aria-hidden="true"></div>
+
+        <div class="relative flex flex-col items-center">
+          <!-- Detalle superior de luna y estrellas -->
+          <div class="flex items-center gap-2 text-goldLight/90 mb-2" aria-hidden="true">
+            <svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0L14.4 9.6L24 12L14.4 14.4L12 24L9.6 14.4L0 12L9.6 9.6L12 0Z"/>
+            </svg>
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/>
+            </svg>
+            <svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0L14.4 9.6L24 12L14.4 14.4L12 24L9.6 14.4L0 12L9.6 9.6L12 0Z"/>
+            </svg>
+          </div>
+
+          <span class="font-serif text-3xl sm:text-4xl text-goldLight tracking-wide font-medium leading-tight">
+            Estrella y Emanuel
+          </span>
+
+          <div class="mt-2.5 flex items-center gap-3">
+            <span class="w-8 h-px bg-goldLight/45"></span>
+            <span class="font-mono text-[10px] tracking-[0.26em] text-sand/85">03 · 09 · 2027</span>
+            <span class="w-8 h-px bg-goldLight/45"></span>
+          </div>
+        </div>
+      </div>
+
+      <p class="font-serif italic text-xl sm:text-2xl leading-relaxed text-sand max-w-lg">
+        “Tu presencia es el sello más valioso en este nuevo capítulo. ¡Te esperamos para celebrar!”
+      </p>
+
+      <div class="w-16 h-px bg-gold/45 my-7"></div>
+
+      <p class="font-mono text-[10px] sm:text-xs tracking-[0.28em] uppercase text-goldLight/80">
+        Estrella y Emanuel · 03.09.2027
+      </p>
+    </div>
+  </footer>
+
+  <!-- ========================================================= -->
+  <!-- LIGHTBOX MODAL INTERACTIVO PARA LA GALERÍA                -->
+  <!-- ========================================================= -->
+  <div
+    id="lightbox"
+    class="fixed inset-0 z-50 hidden items-center justify-center bg-espresso/95 backdrop-blur-sm p-4 sm:p-8"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Visor de fotografías"
+  >
+    <!-- Botón cerrar -->
+    <button
+      type="button"
+      id="lb-close"
+      aria-label="Cerrar visor"
+      class="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 w-11 h-11 rounded-full bg-ivory/10 hover:bg-ivory/20 text-ivory border border-goldLight/35 flex items-center justify-center transition-colors"
+    >
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <!-- Botón anterior -->
+    <button
+      type="button"
+      id="lb-prev"
+      aria-label="Foto anterior"
+      class="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-ivory/10 hover:bg-ivory/20 text-ivory border border-goldLight/35 flex items-center justify-center transition-colors"
+    >
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+
+    <!-- Contenedor de imagen -->
+    <div class="relative max-w-4xl w-full max-h-[85vh] flex flex-col items-center justify-center">
+      <img
+        id="lb-img"
+        src=""
+        alt=""
+        class="max-h-[75vh] max-w-full w-auto h-auto object-contain rounded-2xl border border-goldLight/35 shadow-2xl"
+      />
+      <div class="mt-4 flex items-center gap-4 text-center">
+        <span id="lb-counter" class="font-mono text-xs tracking-[0.24em] uppercase text-goldLight">
+          1 / 7
+        </span>
+      </div>
+    </div>
+
+    <!-- Botón siguiente -->
+    <button
+      type="button"
+      id="lb-next"
+      aria-label="Foto siguiente"
+      class="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-ivory/10 hover:bg-ivory/20 text-ivory border border-goldLight/35 flex items-center justify-center transition-colors"
+    >
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- ========================================================= -->
+  <!-- SCRIPTS INTERACTIVOS                                      -->
+  <!-- ========================================================= -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* -------------------------------------------------------
+       * 1. CUENTA REGRESIVA EN TIEMPO REAL (03/09/2027 21:00 GMT-3)
+       * ------------------------------------------------------- */
+      const targetDate = new Date('2027-09-03T21:00:00-03:00').getTime();
+      const daysEl = document.getElementById('cd-days');
+      const hoursEl = document.getElementById('cd-hours');
+      const minutesEl = document.getElementById('cd-minutes');
+      const secondsEl = document.getElementById('cd-seconds');
+      const statusEl = document.getElementById('cd-status');
+
+      function pad(num, size = 2) {
+        return String(num).padStart(size, '0');
+      }
+
+      function updateCountdown() {
+        const now = Date.now();
+        const diff = targetDate - now;
+
+        if (diff <= 0) {
+          daysEl.textContent = '00';
+          hoursEl.textContent = '00';
+          minutesEl.textContent = '00';
+          secondsEl.textContent = '00';
+          if (statusEl) statusEl.classList.remove('hidden');
+          return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        daysEl.textContent = String(days);
+        hoursEl.textContent = pad(hours);
+        minutesEl.textContent = pad(minutes);
+        secondsEl.textContent = pad(seconds);
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+
+      /* -------------------------------------------------------
+       * 2. ANIMACIONES SUAVES AL HACER SCROLL (IntersectionObserver)
+       * ------------------------------------------------------- */
+      const revealElements = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                obs.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: '0px 0px -30px 0px' }
+        );
+        revealElements.forEach((el) => observer.observe(el));
+      } else {
+        revealElements.forEach((el) => el.classList.add('visible'));
+      }
+
+      /* -------------------------------------------------------
+       * 3. LIGHTBOX INTERACTIVO PARA LA GALERÍA DE FOTOS
+       * ------------------------------------------------------- */
+      const photos = [
+        { src: '769091.webp', alt: 'Estrella y Emanuel cruzando un puente colgante rojo' },
+        { src: '769090.webp', alt: 'Estrella y Emanuel en la playa frente al lago' },
+        { src: '769089.webp', alt: 'Estrella y Emanuel sonriendo en el Jardín Japonés' },
+        { src: '769088.webp', alt: 'Estrella y Emanuel abrazados y sonriendo' },
+        { src: '769086.webp', alt: 'Estrella y Emanuel de noche frente al Reloj Cucú' },
+        { src: '769085.webp', alt: 'Estrella y Emanuel frente a la Estatua de la Libertad' },
+        { src: '769084.webp', alt: 'Estrella y Emanuel abrigados frente al lago y las montañas' },
+      ];
+
+      const lightbox = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lb-img');
+      const lbCounter = document.getElementById('lb-counter');
+      const lbClose = document.getElementById('lb-close');
+      const lbPrev = document.getElementById('lb-prev');
+      const lbNext = document.getElementById('lb-next');
+      const galleryButtons = document.querySelectorAll('.gallery-item');
+
+      let currentIndex = 0;
+      let touchStartX = 0;
+
+      function renderLightbox() {
+        const photo = photos[currentIndex];
+        lbImg.src = photo.src;
+        lbImg.alt = photo.alt;
+        lbImg.onerror = function () {
+          this.onerror = null;
+          this.src = 'https://placehold.co/800x600/E8DFD1/5C4033?text=Estrella+%26+Emanuel';
+        };
+        lbCounter.textContent = `${currentIndex + 1} / ${photos.length}`;
+      }
+
+      function openLightbox(index) {
+        currentIndex = index;
+        renderLightbox();
+        lightbox.classList.remove('hidden');
+        lightbox.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.classList.add('hidden');
+        lightbox.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+
+      function showPrev() {
+        currentIndex = (currentIndex - 1 + photos.length) % photos.length;
+        renderLightbox();
+      }
+
+      function showNext() {
+        currentIndex = (currentIndex + 1) % photos.length;
+        renderLightbox();
+      }
+
+      galleryButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const idx = parseInt(btn.getAttribute('data-index'), 10) || 0;
+          openLightbox(idx);
+        });
+      });
+
+      lbClose.addEventListener('click', closeLightbox);
+      lbPrev.addEventListener('click', showPrev);
+      lbNext.addEventListener('click', showNext);
+
+      // Cerrar al hacer clic fuera de la imagen
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      // Navegación con teclado
+      document.addEventListener('keydown', (e) => {
+        if (lightbox.classList.contains('hidden')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') showPrev();
+        if (e.key === 'ArrowRight') showNext();
+      });
+
+      // Soporte de swipe táctil en móviles
+      lightbox.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      lightbox.addEventListener('touchend', (e) => {
+        const touchEndX = e.changedTouches[0].screenX;
+        const delta = touchEndX - touchStartX;
+        if (Math.abs(delta) > 45) {
+          if (delta > 0) showPrev();
+          else showNext();
+        }
+      }, { passive: true });
+
+      /* -------------------------------------------------------
+       * 4. FORMULARIO RSVP ("CHECK-IN") + WHATSAPP
+       * ------------------------------------------------------- */
+      const rsvpForm = document.getElementById('rsvp-form');
+      const guestNameInput = document.getElementById('guest-name');
+      const nameError = document.getElementById('name-error');
+      const qtyMinus = document.getElementById('qty-minus');
+      const qtyPlus = document.getElementById('qty-plus');
+      const guestCountEl = document.getElementById('guest-count');
+      const guestCountLabelEl = document.getElementById('guest-count-label');
+      const rsvpFeedback = document.getElementById('rsvp-feedback');
+
+      let guestCount = 1;
+      const MIN_GUESTS = 1;
+      const MAX_GUESTS = 10;
+
+      function updateGuestCountUI() {
+        guestCountEl.textContent = String(guestCount);
+        guestCountLabelEl.textContent = guestCount === 1 ? 'Pasajero' : 'Pasajeros';
+      }
+
+      qtyMinus.addEventListener('click', () => {
+        if (guestCount > MIN_GUESTS) {
+          guestCount -= 1;
+          updateGuestCountUI();
+        }
+      });
+
+      qtyPlus.addEventListener('click', () => {
+        if (guestCount < MAX_GUESTS) {
+          guestCount += 1;
+          updateGuestCountUI();
+        }
+      });
+
+      guestNameInput.addEventListener('input', () => {
+        if (guestNameInput.value.trim().length > 0) {
+          nameError.classList.add('hidden');
+          guestNameInput.classList.remove('border-red-600/70');
+        }
+      });
+
+      rsvpForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = guestNameInput.value.trim();
+
+        if (!name) {
+          nameError.classList.remove('hidden');
+          guestNameInput.classList.add('border-red-600/70');
+          guestNameInput.focus();
+          return;
+        }
+
+        const peopleText = guestCount === 1 ? '1 persona' : `${guestCount} personas`;
+        const message =
+          `¡Hola Estrella y Emanuel! ✈️💍\n` +
+          `Hago mi Check-in para confirmar asistencia a su boda el 03/09/2027.\n\n` +
+          `• Nombre y Apellido: ${name}\n` +
+          `• Cantidad de asistentes: ${peopleText}\n\n` +
+          `¡Nos vemos para celebrar este gran viaje juntos!`;
+
+        const whatsappUrl = `https://wa.me/5492664666110?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+
+        rsvpFeedback.classList.remove('hidden');
+      });
+    })();
+  </script>
+</body>
+</html>
