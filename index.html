@@ -2087,8 +2087,8 @@
       }
 
       function removeUnlockListeners() {
-        document.removeEventListener('pointerdown', unlockOnFirstInteraction);
-        document.removeEventListener('touchstart', unlockOnFirstInteraction);
+        document.removeEventListener('click', unlockOnFirstInteraction);
+        document.removeEventListener('touchend', unlockOnFirstInteraction);
         document.removeEventListener('keydown', unlockOnFirstInteraction);
       }
 
@@ -2098,23 +2098,28 @@
         clearInterval(fadeInterval);
         audio.volume = 0;
 
-        audio.play().then(() => {
-          removeUnlockListeners();
-          updateIcons(true);
-          const stepTime = 50;
-          const volumeStep = TARGET_VOLUME / (FADE_DURATION / stepTime);
+        const playPromise = audio.play();
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              removeUnlockListeners();
+              updateIcons(true);
+              const stepTime = 50;
+              const volumeStep = TARGET_VOLUME / (FADE_DURATION / stepTime);
 
-          fadeInterval = setInterval(() => {
-            if (audio.volume + volumeStep >= TARGET_VOLUME) {
-              audio.volume = TARGET_VOLUME;
-              clearInterval(fadeInterval);
-            } else {
-              audio.volume += volumeStep;
-            }
-          }, stepTime);
-        }).catch(() => {
-          updateIcons(false);
-        });
+              fadeInterval = setInterval(() => {
+                if (audio.volume + volumeStep >= TARGET_VOLUME) {
+                  audio.volume = TARGET_VOLUME;
+                  clearInterval(fadeInterval);
+                } else {
+                  audio.volume += volumeStep;
+                }
+              }, stepTime);
+            })
+            .catch(() => {
+              updateIcons(false);
+            });
+        }
       }
 
       function pauseAudio() {
@@ -2129,12 +2134,12 @@
         }
       }
 
-      // 1. Intenta arrancar directamente al cargar la página
-      window.addEventListener('DOMContentLoaded', playWithFadeIn);
+      // 1. Intenta arrancar de inmediato al cargar el script
+      playWithFadeIn();
 
-      // 2. Si el celular bloquea el autoplay inicial, arranca al primer toque en cualquier parte
-      document.addEventListener('pointerdown', unlockOnFirstInteraction, { passive: true });
-      document.addEventListener('touchstart', unlockOnFirstInteraction, { passive: true });
+      // 2. Si el celular bloquea el autoplay, desbloquea con click o touchend (válido en iOS y Android)
+      document.addEventListener('click', unlockOnFirstInteraction);
+      document.addEventListener('touchend', unlockOnFirstInteraction, { passive: true });
       document.addEventListener('keydown', unlockOnFirstInteraction);
 
       // 3. Control manual desde el botón flotante
